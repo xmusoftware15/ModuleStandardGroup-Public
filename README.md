@@ -9,14 +9,13 @@ This repo contains Public Releases and Offical Resources from XMU'17 OOAD Module
 * 12/9 Third Meeting - Service,Dao,Mapper draft
 * 12/10 Forth Meeting(Online) - Integration and modification
 * 12/11 Publish All layers Standard
+* 12/12 Redo and discuss
+* 12/12 Publish Module Standard 1.0
 
 ## Resources
 
-* [Service](Service层标准文档1.0.md)
-* [BO](BO.md)
-* [Dao](Dao层标准文档1.0.md)
-* [BO](DO.md)
-* [Mapper](Mapper层标准文档1.0.md)
+* [Javadoc](doc)
+* [工作量分配](工作量划分.txt)
 
 ## Other Resources
 
