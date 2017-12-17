@@ -4,15 +4,15 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
-import xmu.crms.bo.SchoolBO;
+import xmu.crms.entity.*;
 
 /**
  * 
- * @author ModuleStandardGroup
- * @version 1.00
+ * @author LiuAiqi
+ * @version 2.00
  *
  */
-public class SchoolService {
+public interface SchoolService {
 	/**
 	 * 按城市名称查学校.
 	 * <p>根据城市名称，查询出在该城市的所有学校<br>
@@ -20,11 +20,7 @@ public class SchoolService {
 	 * @param city 城市名称
 	 * @return list 学校列表
 	 */
-	List<SchoolBO> listSchoolByCity(String city)
-	{
-		List<SchoolBO> list = new ArrayList<SchoolBO>();		
-		return  list;
-	}
+	 List<School> listSchoolByCity(String city);
 	
 	/**
 	 * 添加学校.
@@ -33,17 +29,7 @@ public class SchoolService {
 	 * @param school 学校的信息
 	 * @return true（添加学校成功）/false（添加学校未成功）
 	 */
-	boolean insertSchool(SchoolBO school)
-	{
-		if(true)
-		{
-			return true;
-		}
-		else 
-		{
-			return false;
-		}
-	}
+	 Boolean insertSchool(School school);
 	
 	/**
 	 * 获取省份列表.
@@ -51,11 +37,7 @@ public class SchoolService {
 	 * @author LiuAiqi
 	 * @return list 省份名称列表
 	 */
-	List<String> listProvince()
-	{
-		List<String> list = new ArrayList<String>();		
-		return list;
-	}
+	 List<String> listProvince();
 	
 	/**
 	 * 获取城市列表.
@@ -64,11 +46,7 @@ public class SchoolService {
 	 * @param province 省份名称
 	 * @return list 城市名称列表
 	 */
-	List<String> listCity(String province)
-	{
-		List<String> list = new ArrayList<String>();		
-		return list;
-	}
+	 List<String> listCity(String province);
 	
 	/**
 	 * 获取学校信息.
@@ -77,9 +55,5 @@ public class SchoolService {
 	 * @param SchoolId 学校id
 	 * @return SchoolBO 学校信息
 	 */
-	SchoolBO getSchoolBySchoolId(BigInteger SchoolId)
-	{
-		SchoolBO school = new SchoolBO();
-		return school;
-	}
+	 School getSchoolBySchoolId(BigInteger SchoolId);
 }

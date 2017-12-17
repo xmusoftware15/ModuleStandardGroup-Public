@@ -1,3 +1,4 @@
 xmu.crms
-xmu.crms.bo
+xmu.crms.entity
+xmu.crms.exception
 xmu.crms.service

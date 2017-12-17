@@ -1,14 +1,13 @@
-由于我们暂时还未写全所有的Service方法，目前估计最终每个组需要完成40个工作量左右，大家可以暂时先选30个工作量左右的Service先做，Service里面的方法我们还会调整，但改动不会很大，周末前会出第二版。
+每个组至少完成33个工作量
 
-UserService：25
-GradeService:6
-ClassService:16
-FixGroup：15
-SeminarGroupService：18
-CourseService：8
-ScoreRuleService：5
-SeminarService：16
-TopicService：10
+UserService：21
+GradeService: 6
+ClassService: 17
+FixGroupService：13
+SeminarGroupService：20
+CourseService：10
+SeminarService：10
+TopicService：12
 SchoolService：5
-
-
+TimerService：10
+LoginService: 10
