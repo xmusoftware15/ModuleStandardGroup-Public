@@ -9,7 +9,7 @@ import xmu.crms.exception.*;
 
 /**
  *
- * @author ModuleStandardGroup/zhouzhongjun
+ * @author zhouzhongjun
  * @version 2.00
  *
  */

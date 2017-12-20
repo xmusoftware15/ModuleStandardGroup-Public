@@ -1,0 +1,10 @@
+1.UserService---叶宏杰
+2.ClassService---艾星
+3.CourseService---曹兴梅
+4.FixGroupService---周楚伦
+5.SeminarGroupService---周忠君
+6.GradeService+TopicService+SchoolService---叶晓娜
+7.SeminarService---和奇
+8.TimeService---刘爱琪、覃玲芸
+9.LoginService---胡辉
+每个类有对应的负责人，如果对类有问题可以问类的负责人，同时每个方法也有具体的负责人，对具体方法有问题可以问方法的负责人。

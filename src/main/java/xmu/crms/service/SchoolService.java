@@ -8,7 +8,7 @@ import xmu.crms.entity.*;
 
 /**
  * 
- * @author LiuAiqi
+ * @author Yexiaona
  * @version 2.00
  *
  */

@@ -7,7 +7,7 @@ import xmu.crms.entity.*;
 
 /**
  *
- * @author YeXiaona ZhouZhongjun CaoXingmei
+ * @author CaoXingmei
  * @version 2.00
  *
  */

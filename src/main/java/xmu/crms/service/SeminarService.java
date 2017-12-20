@@ -10,7 +10,7 @@ import xmu.crms.exception.*;
 
 /**
  *
- * @author zhouzhongjun CaoXingmei YeHongjie
+ * @author Heqi
  * @version 2.00
  *
  */

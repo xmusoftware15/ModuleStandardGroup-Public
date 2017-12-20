@@ -7,7 +7,7 @@ import xmu.crms.exception.*;
 
 /**
  *
- * @author ZhouZhongjun YeHongjie Heqi Aixing
+ * @author Zhouchulun
  * @version 2.00
  *
  */
