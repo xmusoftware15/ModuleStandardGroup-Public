@@ -1,13 +1,14 @@
-每个组至少完成33个工作量
+每个组至少完成38个工作量
 
-UserService：21
-GradeService: 6
+UserService：15
+GradeService: 15
 ClassService: 17
-FixGroupService：13
-SeminarGroupService：20
+FixGroupService：19
+SeminarGroupService：26
 CourseService：10
-SeminarService：10
-TopicService：12
+SeminarService：8
+TopicService：13
 SchoolService：5
-TimerService：10
-LoginService: 10
+TimerService：5
+LoginService: 15
+Exception：5

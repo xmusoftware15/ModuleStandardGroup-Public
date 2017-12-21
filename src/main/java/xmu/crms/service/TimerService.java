@@ -1,36 +1,32 @@
 package xmu.crms.service;
 
-import org.springframework.scheduling.annotation.Scheduled;
+import java.util.Date;
+import java.util.HashMap;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
  * 定时器
  * 
  * @author qinlingyun liuaiqi
- * @version 2.00
+ * @version 2.10
  */
-@Component
-public class TimerService {
-	
+public interface TimerService {
+
 	/**
-	 * 讨论课结束后计算展示得分.
-	 * <p>对数据库直接操作<br>*条件：讨论课结束<br>
+	 * 向Event表插入数据.
+	 * @author qinlingyun
+	 * @param time 事件的时间
+	 * @param beanName 方法名称
+	 * @param paramMap 方法参数
+	 */
+	 void insertEvent(Date time, Bean beanName, HashMap<Integer, String> paramMap);
+
+	/**
+	 * 每十分钟检查一次Event实体的状况
 	 * @author qinlingyun
 	 */
-	@Scheduled(fixedRate = 5000)
-	public void countPresentationGrade(){
+	 void scheduled();
 		
-	}
-	
-	/**
-	 * 课前将固定小组复制一份作为讨论课小组名单.
-	 * <p>对数据库直接操作<br>*条件：上课前<br>
-	 * @author qinlingyun
-	 */
-	@Scheduled(fixedRate = 5000)
-	public void fixedGroupToSeminarGroup(){
-
-		return;
-	}
-
 }

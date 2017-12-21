@@ -11,7 +11,7 @@ import xmu.crms.exception.*;
 /**
  *
  * @author Heqi
- * @version 2.00
+ * @version 2.10
  *
  */
 public interface SeminarService {
@@ -42,35 +42,6 @@ public interface SeminarService {
 	 */
 	Boolean deleteSeminarByCourseId(BigInteger courseId) throws IllegalArgumentException,
 			CourseNotFoundException;
-
-
-	/**
-	 * 获得学生当前讨论课信息(小程序端获得讨论课信息进行选题分组、签到等).
-	 * <p>通过学生用户id和讨论课id获得学生当前的讨论课信息<br>(此学生是否是队长，当前讨论课是否处于签到状态，当前讨论课是否可以选题，当前讨论课的组队方式).
-	 * @author CaoXingmei
-	 * @param seminarId 讨论课的id
-	 * @param userId 用户的id
-	 * @return 当前讨论课的信息
-	 * @see SeminarGroupService #getSeminarGroupById(BigInteger userId, BigInteger seminarId)
-	 * @exception IllegalArgumentException  格式错误时抛出
-	 * @exception SeminarNotFoundException 该讨论课不存在时抛出
-	 */
-	Seminar getMySeminarBySeminarId(BigInteger seminarId,BigInteger userId) throws
-			IllegalArgumentException,SeminarNotFoundException;
-
-
-	/**
-	 * 获得学生相关的某个讨论课的信息.
-	 * ＜p＞通过学生用户id和讨论课id获得学生某个讨论课的详细信息<br>(包括讨论课信息，教师信息).
-	 * @author CaoXingmei
-	 * @param seminarId 讨论课的id
-	 * @param userId 学生的id
-	 * @return 相应的讨论课的详细信息
-	 * @exception IllegalArgumentException SeminarId 格式错误时抛出
-	 * @exception SeminarNotFoundException 该讨论课不存在时抛出
-	 */
-	Seminar getSeminarDetailBySeminarId(BigInteger seminarId,BigInteger userId)
-			throws IllegalArgumentException,SeminarNotFoundException;
 
 
 	/**

@@ -9,7 +9,7 @@ import xmu.crms.exception.*;
 /**
  * 
  * @author aixing
- * @version 2.00
+ * @version 2.10
  *
  */
 public interface ClassService {
