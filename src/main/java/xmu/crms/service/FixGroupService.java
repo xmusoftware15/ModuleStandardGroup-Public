@@ -38,7 +38,18 @@ public interface FixGroupService {
 	 */
     public void deleteFixGroupMemberByFixGroupId(BigInteger fixGroupId) throws
 	        InfoIllegalException,FixGroupNotFoundException;
-	
+    /**
+     * 按FixGroupId和UserId删除FixGroupMember中某个学生.
+     * <p>按FixGroupId和UserId删除FixGroupMember中的某个学生<br>
+     * @author zhouzhongjun
+     * @param fixGroupId 固定分组Id
+     * @param userId 组员的Id
+     * @exception InfoIllegalException 信息不合法，id格式错误 
+     * @exception FixGroupNotFoundException 未找到小组
+     * @exception UserNotFoundException 不存在该学生
+	 */
+    public void deleteFixGroupUserById(BigInteger fixGroupId, BigInteger userId) throws
+	        InfoIllegalException,FixGroupNotFoundException,UserNotFoundException;
     /**
      * 将学生加入固定小组.
      * ＜p＞将用户加入指定的固定小组<br>
