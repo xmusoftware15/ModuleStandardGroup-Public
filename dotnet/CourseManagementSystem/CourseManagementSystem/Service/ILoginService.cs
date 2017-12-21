@@ -1,78 +1,66 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Numerics;
-using Xmu.Crms.Shared.Models;
+﻿using Xmu.Crms.Shared.Models;
 
 namespace Xmu.Crms.Shared.Service
 {
-    /**
- * @author ModuleStandardGroup/YeHongjie
- * @version 2.00
- */
-    public interface LoginService
+    /// <summary>
+    /// @author ModuleStandardGroup/YeHongjie
+    /// @version 2.00
+    /// </summary>
+    public interface ILoginService
     {
+        /// <summary>
+        /// 微信登录.
+        /// @author qinlingyun
+        /// </summary>
+        /// <param name="userId">用户Id</param>
+        /// <param name="code">微信小程序/OAuth2授权的Code</param>
+        /// <param name="state">微信OAuth2授权的state。对于小程序，值恒为 MiniProgram</param>
+        /// <param name="successUrl">微信OAuth2授权后跳转到的网址</param>
+        /// <returns>user 该用户信息</returns>
+        UserInfo SignInWeChat(long userId, string code, string state, string successUrl);
 
 
-        /**
-      * 微信登录.
-      * <p>微信登录<br> 
-      * @author qinlingyun
-      * @param userId 用户Id
-      * @param code 微信小程序/OAuth2授权的Code
-      * @param state 微信OAuth2授权的state。对于小程序，值恒为 MiniProgram
-      * @param successUrl 微信OAuth2授权后跳转到的网址
-      * @return user 该用户信息
-      * @exception UserNotFoundException 登录失败时抛出
-      */
-        UserInfo SignInWeChat(BigInteger userId, String code, String state, String successUrl);
-
-
-        /**
-	 * 手机号登录.
-	 * <p>手机号登录 (.Net使用),User中只有phone和password，用于判断用户名密码是否正确<br>
-	 * @author qinlingyun 
-	 * @param user 用户信息(手机号Phone和密码Password)
-	 * @return user 该用户信息
-	 * @exception UserNotFoundException 登录失败时抛出
-	 */
+        /// <summary>
+        /// 手机号登录.
+        /// @author qinlingyun
+        /// User中只有phone和password，用于判断用户名密码是否正确
+        /// </summary>
+        /// <param name="user">用户信息(手机号Phone和密码Password)</param>
+        /// <returns>user 该用户信息</returns>
         UserInfo SignInPhone(UserInfo user);
 
-
-        /**
-	 * 手机号注册.
-	 * <p>手机号注册 (.Net使用),User中只有phone和password，userId是注册后才有并且在数据库自增<br> 
-	 * @author qinlingyun
-	 * @param userinfo 用户信息(手机号Phone和密码Password)
-	 * @return userinfo 该用户信息
-	 */
+        /// <summary>
+        /// 手机号注册.
+        /// @author qinlingyun
+        /// 手机号注册 User中只有phone和password，userId是注册后才有并且在数据库自增
+        /// </summary>
+        /// <param name="user">用户信息(手机号Phone和密码Password)</param>
+        /// <returns>user 该用户信息</returns>
         UserInfo SignUpPhone(UserInfo user);
 
 
-        /**
-	 * 用户解绑.
-	 * <p>教师解绑账号(j2ee使用)<br>
-	 * @author qinlingyun
-	 * @param userId 用户id
-	 * @see CourseService#listCourseByUserId(BigInteger userId)
-	 * @see CourseService#deleteCourseByCourseId(BigInteger courseId)
-	 * @exception IllegalArgumentException 信息不合法，id格式错误
-	 * @exception UserNotFoundException 未找到对应用户
-	 */
-        void DeleteTeacherAccount(long userId);
+        /// <summary>
+        /// 用户解绑.教师解绑账号
+        /// @author qinlingyun
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns>true 解绑成功 false 解绑失败</returns>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.DeleteCourseByCourseId(System.Int64)"/>
+        /// <exception cref="T:System.ArgumentException">id格式错误</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">未找到对应用户</exception>
+        bool DeleteTeacherAccount(long userId);
 
 
-        /**
-	 * 用户解绑.
-	 * <p>学生解绑账号(j2ee使用)<br>
-	 * @author qinlingyun
-	 * @param userId 用户id
-	 * @see ClassService#deleteCourseSelectionById(BigInteger userId,BigInteger classId)
-	 * @exception IllegalArgumentException 信息不合法，id格式错误
-	 * @exception UserNotFoundException 未找到对应用户
-	 */
-        void DeleteStudentAccount(long userId);
-
+        /// <summary>
+        /// 用户解绑.学生解绑账号
+        /// @author qinlingyun
+        /// </summary>
+        /// <param name="userId">用户id</param>
+        /// <returns>true 解绑成功 false 解绑失败</returns>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.DeleteCourseSelectionById(System.Int64,System.Int64)"/>
+        /// <exception cref="T:System.ArgumentException">id格式错误</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">未找到对应用户</exception>
+        bool DeleteStudentAccount(long userId);
     }
 }
