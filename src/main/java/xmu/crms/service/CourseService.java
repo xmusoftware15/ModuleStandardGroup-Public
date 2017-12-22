@@ -54,6 +54,7 @@ public interface CourseService {
 	 * @author ZhouZhongjun
 	 * @param courseId 课程Id
 	 * @param course 课程信息
+	 * @exception CourseNotFoundException 未找到课程
 	 */
 	 void updateCourseByCourseId(BigInteger courseId,Course course);
 
