@@ -68,7 +68,7 @@ public interface CourseService {
 	 * @see ClassService   #deleteClassByCourseId(BigInteger courseId)
 	 * @exception IllegalArgumentException courseId格式错误时抛出
 	 */
-	 void deleteCourseByCourseId(BigInteger courseId)throws IllegalArgumentException,CourseNotFoundException;
+	 void deleteCourseByCourseId(BigInteger courseId)throws IllegalArgumentException;
 
 
 
