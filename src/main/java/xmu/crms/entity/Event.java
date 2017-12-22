@@ -4,17 +4,17 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.HashMap;
 
-import org.springframework.context.annotation.Bean;
-
 public class Event {
 	
 	private BigInteger id;
 	
 	private Date time;
 	
-	private Bean beanName;
+	private String beanName;
 	
-	private HashMap<BigInteger, String> map;
+	private String methodName;
+	
+	private HashMap<BigInteger, String> paramMap;
 
 	public BigInteger getId() {
 		return id;
@@ -32,41 +32,52 @@ public class Event {
 		this.time = time;
 	}
 
-	public Bean getBeanName() {
+	public String getBeanName() {
 		return beanName;
 	}
 
-	public void setBeanName(Bean beanName) {
+	public void setBeanName(String beanName) {
 		this.beanName = beanName;
 	}
 
-	public HashMap getMap() {
-		return map;
+	public HashMap<BigInteger, String> getParamMap() {
+		return paramMap;
 	}
 
-	public void setMap(HashMap map) {
-		this.map = map;
+	public void setParamMap(HashMap<BigInteger, String> paramMap) {
+		this.paramMap = paramMap;
 	}
 
 	public Event() {
 		
 	}
 
-	public Event(BigInteger id, Date time, Bean beanName, HashMap map) {
+	public Event(BigInteger id, Date time, String beanName, String methodName, HashMap<BigInteger, String> paramMap) {
 		super();
 		this.id = id;
 		this.time = time;
 		this.beanName = beanName;
-		this.map = map;
+		this.methodName = methodName;
+		this.paramMap = paramMap;
 	}
+
+
+	public String getMethodName() {
+		return methodName;
+	}
+
+	public void setMethodName(String methodName) {
+		this.methodName = methodName;
+	}
+	
 
 	@Override
 	public String toString() {
 		return "Event [id=" + id + 
 				", time=" + time + 
 				", beanName=" + beanName + 
-				", map=" + map + 
-				"]";
+				", methodName=" + methodName + 
+				", paramMap=" + paramMap + "]";
 	}
 	
 }

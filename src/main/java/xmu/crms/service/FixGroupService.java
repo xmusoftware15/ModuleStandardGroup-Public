@@ -7,7 +7,10 @@ import xmu.crms.entity.FixGroup;
 import xmu.crms.entity.FixGroupMember;
 import xmu.crms.entity.SeminarGroup;
 import xmu.crms.entity.User;
-import xmu.crms.exception.*;
+import xmu.crms.exception.ClassesNotFoundException;
+import xmu.crms.exception.FixGroupNotFoundException;
+import xmu.crms.exception.InvalidOperationException;
+import xmu.crms.exception.UserNotFoundException;
 
 /**
  * 
@@ -58,7 +61,7 @@ public interface FixGroupService {
     
 	/**
 	 * 查询固定小组成员.
-	 * ＜p＞按照固定小组id查询该小组的成员<br>
+	 * <p>按照固定小组id查询该小组的成员<br>
 	 * @author YeHongjie
 	 * @param groupId 要查询的固定小组id
 	 * @return List 固定小组成员信息
@@ -92,7 +95,7 @@ public interface FixGroupService {
     
     /**
 	 * 删除固定小组.
-	 * ＜p＞按照id删除固定小组<br>
+	 * <p>按照id删除固定小组<br>
 	 * @author YeHongjie
 	 * @param groupId 固定小组的id
 	 * @see FixGroupService #deleteFixGroupMemberByFixGroupId(BigInteger fixGroupId)
@@ -104,7 +107,7 @@ public interface FixGroupService {
     
     /**
 	 * 修改固定小组.
-	 * ＜p＞修改固定小组的信息（不包括成员）<br>
+	 * <p>修改固定小组的信息（不包括成员）<br>
 	 * @author YeHongjie
 	 * @param groupId 小组的id
 	 * @param fixGroupBO 小组信息
@@ -116,7 +119,7 @@ public interface FixGroupService {
     
     /**
 	 * 查询固定小组.
-	 * ＜p＞按照id查询某一固定小组的信息（包括成员）<br>
+	 * <p>按照id查询某一固定小组的信息（包括成员）<br>
 	 * @author YeHongjie
 	 * @param groupId 小组的id
 	 * @return List 固定小组对象列表
@@ -125,13 +128,13 @@ public interface FixGroupService {
 	 * @exception FixGroupNotFoundException 未找到小组
 	 */
 	List<FixGroupMember> getFixGroupByGroupId(BigInteger groupId) throws
-	IllegalArgumentException,FixGroupNotFoundException;
+		IllegalArgumentException,FixGroupNotFoundException;
 
  
 
     /**
 	 * 将学生加入小组.
-	 * ＜p＞将用户加入指定的小组<br>
+	 * <p>将用户加入指定的小组<br>
 	 * @author YeHongjie
 	 * @param userId 学生的id
 	 * @param groupId 要加入小组的id
@@ -186,12 +189,12 @@ public interface FixGroupService {
 	     IllegalArgumentException,FixGroupNotFoundException;
 	
 	/**
-	 * 定时器方法.
-	 * 课前将固定小组复制一份作为讨论课小组名单.
-	 * <p>条件: 讨论课上课前<br>*SeminarGroupService<br>
+	 * 将固定小组作为讨论课小组名单.
 	 * @author qinlingyun
 	 * @param semianrId 讨论课ID
 	 * @param fixedGroupId 小组ID
+	 * @exception IllegalArgumentException  信息不合法，id格式错误
+	 * @exception FixGroupNotFoundException 未找到小组
 	 */
 	 void fixedGroupToSeminarGroup(BigInteger semianrId, BigInteger fixedGroupId);
 
