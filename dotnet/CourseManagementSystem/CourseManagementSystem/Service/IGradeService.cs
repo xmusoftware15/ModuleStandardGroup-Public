@@ -67,7 +67,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userId">用户id</param>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupBySeminarId(System.Int64)"/>
-        List<int> ListSeminarGradeByStudentId(long userId);
+        List<SeminarGroup> ListSeminarGradeByStudentId(long userId);
 
         /// <summary>
         /// 定时器方法:讨论课结束后计算展示得分.
