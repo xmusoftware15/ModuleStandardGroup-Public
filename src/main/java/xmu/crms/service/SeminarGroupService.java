@@ -35,13 +35,12 @@ public interface SeminarGroupService {
 	 * @author YeHongjie
 	 * @param userId 学生的id
 	 * @param groupId 要加入讨论课小组的id
-	 * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
 	 *@exception IllegalArgumentException (信息不合法，id格式错误)
 	 *@exception GroupNotFoundException (未找到小组)
 	 *@exception UserNotFoundException (不存在该学生)
 	 *@exception InvalidOperationException （待添加学生已经在小组里了）
 	 */
-	 BigInteger insertSeminarGroupMemberById(BigInteger userId,BigInteger groupId)
+	 void insertSeminarGroupMemberById(BigInteger userId,BigInteger groupId)
 			throws IllegalArgumentException,GroupNotFoundException,UserNotFoundException,
 			InvalidOperationException;
 
@@ -116,7 +115,7 @@ public interface SeminarGroupService {
 	 * @return BigInteger 若创建成功返回该小组的id，失败则返回-1
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
 	 */
-	 BigInteger insertSeminarGroupBySeminarId(BigInteger seminarId,
+	 void insertSeminarGroupBySeminarId(BigInteger seminarId,
 													SeminarGroup seminarGroup) throws IllegalArgumentException;
 
 	/**
@@ -126,8 +125,7 @@ public interface SeminarGroupService {
 	 * @param seminarGroupMember 小组成员信息
 	 * @return BigInteger 若创建成功返回该小组成员表的id，失败则返回-1
 	 */
-	 BigInteger insertSeminarGroupMemberByGroupId(BigInteger groupId,
-														SeminarGroupMember seminarGroupMember);
+	 void insertSeminarGroupMemberByGroupId(BigInteger groupId,SeminarGroupMember seminarGroupMember);
 
 
 	/**
@@ -220,7 +218,7 @@ public interface SeminarGroupService {
 	 * @exception IllegalArgumentException GroupId、TopicId格式错误时抛出
 	 * @exception GroupNotFoundException 该小组不存在时抛出
 	 */
-	 BigInteger insertTopicByGroupId(BigInteger groupId, BigInteger topicId) throws
+	 void insertTopicByGroupId(BigInteger groupId, BigInteger topicId) throws
 			IllegalArgumentException,GroupNotFoundException;
 
 
