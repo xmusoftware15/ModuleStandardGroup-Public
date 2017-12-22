@@ -59,7 +59,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="seminarGroupId">讨论课组id</param>
         /// <param name="grade">分数</param>
-        void UpdateGroupByGroupId(long seminarGroupId, long grade);
+        void UpdateGroupByGroupId(long seminarGroupId, int grade);
 
         /// <summary>
         /// 获取某学生的讨论课成绩列表.
