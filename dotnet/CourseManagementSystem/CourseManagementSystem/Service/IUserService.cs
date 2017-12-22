@@ -100,6 +100,20 @@ namespace Xmu.Crms.Shared.Service
         List<UserInfo> ListPresentStudent(long seminarId, long classId);
 
         /// <summary>
+        /// 获取讨论课所在的班级的迟到学生名单.
+        /// @author qinlingyun
+        /// </summary>
+        /// <param name="seminarId">讨论课ID</param>
+        /// <param name="classId">班级ID</param>
+        /// <returns>list 处于迟到状态的学生的列表</returns>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListAttendanceById(System.Int64,System.Int64)"/>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.GetUserByUserId(System.Int64)"/>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到对应班级</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到对应讨论课</exception>
+        /// <exception cref="T:System.ArgumentException">id格式错误</exception>
+        List<UserInfo> ListLateStudent(long seminarId, long classId);
+
+        /// <summary>
         /// 获取讨论课所在班级缺勤学生名单.
         /// </summary>
         /// <param name="seminarId">讨论课ID</param>
@@ -108,6 +122,8 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListUserByClassId(System.Int64,System.String,System.String)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListPresentStudent(System.Int64,System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到对应班级</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到对应讨论课</exception>
         List<UserInfo> ListAbsenceStudent(long seminarId, long classId);
 
         /// <summary>

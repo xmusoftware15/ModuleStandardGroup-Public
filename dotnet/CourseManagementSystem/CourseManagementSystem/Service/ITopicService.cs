@@ -34,21 +34,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="topicId">要删除的topic的topicId</param>
         /// <param name="seminarId">要删除topic所属seminar的id</param>
-        /// 
-        /// 删除topic还要把每个选了这个topic的小组的选题属性修改为null
-        /// 想找到选了这个topic的小组，首先通过seminarId获得该讨论课所有小组，遍历判断是否选了这个topic
-        /// SeminarGroupService sg=new SeminarGroupService();
-        /// GroupService gs=new GroupService();
-        /// List&lt;SeminarGroupBO&gt; groups=sg.listSeminarGroupBySeminarId(seminarId);
-        /// List&lt;SeminarGroupBO&gt; topic_group=new ArrayList&lt;SeminarGroupBO&gt;();
-        /// for g in groups
-        /// if(选了此topic) topic_group.add(g);
-        /// 修改topic_group的选题属性
-        /// for g in topic_group{
-        /// g.topic=null;
-        /// gs.updateSeminarGroupById(g.id, g);}
-        /// 删除讨论课
-        /// 
+        
         /// <exception cref="T:System.ArgumentException">Id格式错误时抛出</exception>
         void DeleteTopicByTopicId(long topicId, long seminarId);
 
@@ -60,6 +46,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>null</returns>
         /// <exception cref="T:System.ArgumentException">Id格式错误时抛出</exception>
         List<Topic> ListTopicBySeminarId(long seminarId);
+
 
         /// <summary>
         /// 根据讨论课Id和topic信息创建一个话题.
@@ -88,6 +75,15 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="topicId">讨论课Id</param>
         /// <exception cref="T:System.ArgumentException">topicId格式错误</exception>
         void DeleteSeminarGroupTopicByTopicId(long topicId);
+
+        ///<summary>
+        ///按话题id和小组id获取讨论课小组选题信息
+        ///</summary>
+        ///<param name="topicId">讨论课Id</param>
+        ///<param name="groupId">小组Id</param>
+        /// <returns>seminarGroupTopic 讨论课小组选题信息</returns>
+        ///  <exception cref="T:System.ArgumentException">seminarId格式错误</exception>
+        SeminarGroupTopic GetSeminarGroupTopicById(long topicId, long groupId);
 
         /// <summary>
         /// 按seminarId删除话题.

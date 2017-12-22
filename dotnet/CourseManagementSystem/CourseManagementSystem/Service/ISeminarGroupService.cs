@@ -132,7 +132,7 @@ namespace Xmu.Crms.Shared.Service
         long GetSeminarGroupLeaderById(long userId, long seminarId);
 
         /// <summary>
-        /// 自动分组.
+        /// 定时器方法：自动分组.
         /// @author YeHongjie
         /// </summary>
         /// 

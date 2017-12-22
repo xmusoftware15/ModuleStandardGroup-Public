@@ -1,4 +1,6 @@
-﻿namespace Xmu.Crms.Shared.Service
+﻿using System;
+
+namespace Xmu.Crms.Shared.Service
 {
     /// <summary>
     /// 定时器
@@ -7,20 +9,20 @@
     /// </summary>
     public interface ITimerService
     {
-        /// <summary>
-        /// 讨论课结束后计算展示得分.
-        /// @author qinlingyun
+        ///<summary>
+        ///向Event表插入数据.
+        ///@author qinlingyun
         /// </summary>
+        /// <param name="Time">事件的时间</param>
+        /// <param name="Bean">方法名称</param>
+        /// <param name="Parameter">方法参数</param>
         /// 
-        /// 条件：讨论课结束
-        void CountPresentationGrade();
+        void InsertEvent(DateTime Time, string Bean, string Parameter);
 
-        /// <summary>
-        /// 课前将固定小组复制一份作为讨论课小组名单.
-        /// @author qinlingyun
+        ///<summary>
+        ///每十分钟检查一次Event实体的状况
+        ///@author qinlingyun
         /// </summary>
-        /// 
-        /// 条件：上课前
-        void FixedGroupToSeminarGroup();
+        void Scheduled();
     }
 }
