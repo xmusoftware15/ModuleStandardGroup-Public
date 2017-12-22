@@ -12,8 +12,10 @@ public class Event {
 	
 	private Date time;
 	
-	private Bean beanName;
-	
+	private String beanName;
+
+	private String methodName;
+
 	private HashMap<BigInteger, String> map;
 
 	public BigInteger getId() {
@@ -32,12 +34,20 @@ public class Event {
 		this.time = time;
 	}
 
-	public Bean getBeanName() {
+	public String getBeanName() {
 		return beanName;
 	}
 
-	public void setBeanName(Bean beanName) {
+	public void setBeanName(String beanName) {
 		this.beanName = beanName;
+	}
+
+	public String getMethodName() {
+		return methodName;
+	}
+
+	public void setMethod(String beanName) {
+		this.methodName = methodName;
 	}
 
 	public HashMap getMap() {
@@ -52,11 +62,11 @@ public class Event {
 		
 	}
 
-	public Event(BigInteger id, Date time, Bean beanName, HashMap map) {
+	public Event(Date time, String beanName, String methodName, HashMap<BigInteger, String> map) {
 		super();
-		this.id = id;
 		this.time = time;
 		this.beanName = beanName;
+		this.methodName = methodName;
 		this.map = map;
 	}
 

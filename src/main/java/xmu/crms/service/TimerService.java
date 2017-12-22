@@ -2,12 +2,15 @@ package xmu.crms.service;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.math.BigInteger;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
+import xmu.crms.entity.Event;
 
 /**
  * 定时器
@@ -15,7 +18,20 @@ import org.springframework.scheduling.annotation.Scheduled;
  * @author qinlingyun liuaiqi
  * @version 2.10
  */
+
 public class TimerService {
+
+    /**
+     * 向Event表插入数据.
+     * @author qinlingyun
+     * @param time 事件的时间
+     * @param beanName 方法名称
+     * @param paramMap 方法参数
+     */
+    void insertEvent(Date time, String beanName, String methodName, HashMap<BigInteger, String> paramMap){
+        Event e = new Event(time, beanName, methodName, paramMap);
+        //Insert entity to db
+    }
 
     private ApplicationContext applicationContext;
     private List<Method> eventCallbacks;
@@ -48,6 +64,20 @@ public class TimerService {
                     e.printStackTrace();
                 }
             }
+        }
+
+        //select * from event where time < NOW()
+        List<Event> events = new ArrayList<>();
+        for (Event event : events) {
+            try {
+                Object bean = applicationContext.getBean(event.getBeanName());
+                Method callback = BeanUtils.findMethod(bean.getClass(), event.getMethodName());
+                callback.invoke(applicationContext.getBean(event.getBeanName()), event.getMap().values().toArray());
+            } catch (IllegalAccessException | InvocationTargetException e) {
+                e.printStackTrace();
+
+            }
+            //delete from event where id = event.id
         }
     }
 		
