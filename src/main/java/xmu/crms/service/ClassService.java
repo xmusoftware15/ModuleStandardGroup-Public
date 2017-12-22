@@ -18,9 +18,8 @@ public interface ClassService {
 	 * 
 	 * @author zhouzhongjun
 	 * @param classId 班级Id
-	 * @return true/false 是否成功删除
 	 */
-	 Boolean deleteClassSelectionByClassId(BigInteger classId);
+	 void deleteClassSelectionByClassId(BigInteger classId);
 
 	/**
 	 * 按课程名称和教师名称获取班级列表.
@@ -71,10 +70,9 @@ public interface ClassService {
 	 * @author yexiaona
 	 * @param classId 班级ID
 	 * @param newClass 修改后的班级
-	 * @return boolean 班级修改是否成功情况
      * @exception ClassNotFoundException 无此班级Id
 	 */
-	 Boolean updateClassByClassId(BigInteger classId,ClassInfo newClass)
+	 void updateClassByClassId(BigInteger classId,ClassInfo newClass)
 	         throws ClassNotFoundException;
 
 	/**
@@ -84,13 +82,12 @@ public interface ClassService {
 	 * 
 	 * @author yexiaona
 	 * @param classId 班级ID
-	 * @return boolean 班级删除是否成功情况
 	 * @see ClassService #deleteCourseSelectionById(BigInteger classId,User user)
 	 * @see FixGroupService #deleteFixGroupByClassId(BigInteger classId)
 	 * @see SeminarGroupService #deleteSeminarGroupByClaaId(BigInteger classId)
      * @exception ClassNotFoundException 无此班级Id
 	 */
-	 Boolean deleteClassByClassId(BigInteger classId)
+	 void deleteClassByClassId(BigInteger classId)
 	         throws ClassNotFoundException;
 
 	/**
@@ -116,25 +113,25 @@ public interface ClassService {
 	 * @author yexiaona
 	 * @param userId 用户id
 	 * @param classId  班级id
-	 * @return boolean 取消班级是否成功
      * @exception UserNotFoundException 无此姓名的教师
      * @exception ClassNotFoundException 无此Id的班级
 	 */
-	 Boolean deleteCourseSelectionById(BigInteger userId, BigInteger classId) throws
+	 void deleteCourseSelectionById(BigInteger userId, BigInteger classId) throws
              UserNotFoundException,ClassNotFoundException;
 
 	/**
 	 * 老师获取该班级签到状态.
 	 * <p>
-	 * 根据讨论课id及班级id，获得该班级的签到状态<br>
+	 * 根据讨论课id及班级id，获得老师所在位置经纬度和该班级的签到状态<br>
 	 * 
 	 * @author yexiaona
+	 * @param classId 班级id
 	 * @param seminarId  讨论课id
 	 * @return location 该班级签到状态
 	 * @see SeminarGroupService #listSeminarGroupBySeminarId(BigInteger seminarId)
 	 * @exception SeminarNotFoundException 无此Id的讨论课
 	 */
-	 Location getCallStatusById(BigInteger seminarId)
+	 Location getCallStatusById(BigInteger classId,BigInteger seminarId)
 	         throws SeminarNotFoundException;
 
 	/**
@@ -163,10 +160,9 @@ public interface ClassService {
 	 * @see ClassService #listClassByCourseId(BigInteger courseId)
 	 * @see ClassService #deleteClasssSelectionByClassId(BigInteger classId)
 	 * @see FixGroupService #deleteFixGroupByClassId(BigInteger ClassId)
-	 * @return true删除成功 false删除失败
      * @exception CourseNotFoundException 无此Id的课程
 	 */
-	 Boolean deleteClassByCourseId(BigInteger courseId) throws 
+	 void deleteClassByCourseId(BigInteger courseId) throws 
 	             CourseNotFoundException;
 
 	/**
@@ -174,10 +170,9 @@ public interface ClassService {
 	 * 
 	 * @author zhouzhongjun
 	 * @param classId 班级Id
-	 * @return true删除成功 false删除失败
 	 * @exception ClassNotFoundException 无此Id的班级
 	 */
-	 Boolean deleteScoreRuleById(BigInteger classId) throws ClassNotFoundException;
+	 void deleteScoreRuleById(BigInteger classId) throws ClassNotFoundException;
 
 	/**
 	 * 查询评分规则.
@@ -214,10 +209,9 @@ public interface ClassService {
 	 * @author YeHongjie
 	 * @param classId 班级id
 	 * @param proportions 评分规则
-	 * @return state 若修改成功则返回true，失败则返回false
      * @exception InvalidOperationException 班级信息不合法
      * @exception ClassNotFoundException 无此Id的班级 
 	 */
-	 Boolean updateScoreRule(BigInteger classId, ClassInfo proportions)
+	 void updateScoreRule(BigInteger classId, ClassInfo proportions)
              throws InvalidOperationException,ClassNotFoundException;
 }

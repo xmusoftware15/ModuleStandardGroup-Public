@@ -32,22 +32,20 @@ public interface TopicService {
      *
      * @param topicId 讨论课的ID
      * @param topic   修改后的讨论课
-     * @return 是否修改成功
      * @throws TopicNotFoundException   无此小组或Id错误
      * @throws IllegalArgumentException Id格式错误或topic格式错误时抛出
      * @author aixing
      */
-    Boolean updateTopicByTopicId(BigInteger topicId, Topic topic) throws TopicNotFoundException, IllegalArgumentException;
+    void updateTopicByTopicId(BigInteger topicId, Topic topic) throws TopicNotFoundException, IllegalArgumentException;
 
     /**
      * 删除topic.
      * <p>删除topic表中相应讨论课的topic<br>
      *
      * @param topicId 要删除的topic的topicId
-     * @return 是否成功
      * @throws IllegalArgumentException Id格式错误时抛出
      */
-    Boolean deleteTopicByTopicId(BigInteger topicId) throws IllegalArgumentException;
+    void deleteTopicByTopicId(BigInteger topicId) throws IllegalArgumentException;
 
 
     /**
@@ -80,22 +78,20 @@ public interface TopicService {
      *
      * @param groupId 小组Id
      * @param topicId 话题Id
-     * @return true删除成功 false删除失败
      * @throws IllegalArgumentException groupId格式错误或topicId格式错误时抛出
      * @author zhouzhongjun
      */
-    Boolean deleteTopicById(BigInteger groupId, BigInteger topicId) throws IllegalArgumentException;
+    void deleteTopicById(BigInteger groupId, BigInteger topicId) throws IllegalArgumentException;
 
     /**
      * 按topicId删除SeminarGroupTopic表信息.
      * <p>删除seminar_group_topic表中选择了某个话题的全部记录<br>
      *
      * @param topicId 讨论课Id
-     * @return true删除成功 false删除失败
      * @throws IllegalArgumentException topicId格式错误
      * @author zhouzhongjun
      */
-    Boolean deleteSeminarGroupTopicByTopicId(BigInteger topicId) throws IllegalArgumentException;
+    void deleteSeminarGroupTopicByTopicId(BigInteger topicId) throws IllegalArgumentException;
 
     /**
      * 按话题id和小组id获取讨论课小组选题信息
@@ -114,13 +110,12 @@ public interface TopicService {
      * <p>根据seminarId获得topic信息，然后再根据topic删除seninargrouptopic信息和根据seminarGroupTopicId删除StudentScoreGroup信息，最后再根据删除topic信息<br>
      *
      * @param seminarId 讨论课Id
-     * @return true删除成功 false删除失败
      * @throws IllegalArgumentException seminarId格式错误
      * @author zhouzhongjun
      * @see TopicService #listTopicBySeminarId(BigInteger seminarId)
      * @see TopicService #deleteSeminarGroupTopicByTopicId(BigInteger topicId)
      * @see GradeService   #deleteStudentScoreGroupByTopicId(BigInteger seminarGroupTopicId)
      */
-    Boolean deleteTopicBySeminarId(BigInteger seminarId) throws IllegalArgumentException;
+    void deleteTopicBySeminarId(BigInteger seminarId) throws IllegalArgumentException;
 
 }

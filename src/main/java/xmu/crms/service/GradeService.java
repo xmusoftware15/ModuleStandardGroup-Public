@@ -17,11 +17,10 @@ public interface GradeService {
      * 按seminarGroupTopicId删除学生打分表.
      *
      * @param seminarGroupTopicId  小组话题表的Id
-     * @return true删除成功  false删除失败
      * @throws IllegalArgumentException topicId格式错误时抛出
      * @author zhouzhongjun
      */
-    Boolean deleteStudentScoreGroupByTopicId(BigInteger seminarGroupTopicId) throws IllegalArgumentException;
+    void deleteStudentScoreGroupByTopicId(BigInteger seminarGroupTopicId) throws IllegalArgumentException;
 
     /**
      * 获取某学生一堂讨论课信息.
@@ -70,11 +69,10 @@ public interface GradeService {
      * @param groupId   小组Id
      * @param grade     分数
      * @param topicId   话题id
-     * @return true 提交成功 false 提交失败
      * @throws IllegalArgumentException topicId或userId或seminarId或groupId或grade格式错误
      * @author Huhui
      */
-    Boolean insertGroupGradeByUserId(BigInteger topicId, BigInteger userId, BigInteger groupId, BigInteger grade)
+    void insertGroupGradeByUserId(BigInteger topicId, BigInteger userId, BigInteger groupId, BigInteger grade)
             throws IllegalArgumentException;
 
     /**
@@ -82,12 +80,11 @@ public interface GradeService {
      *
      * @param seminar_group_id 讨论课组id
      * @param grade            分数
-     * @return Boolean true 操作成功 false 操作失败
      * @throws GroupNotFoundException   未找到小组
      * @throws IllegalArgumentException seminar_group_id或grade格式错误
      * @author Huhui
      */
-    Boolean updateGroupByGroupId(BigInteger seminar_group_id, BigInteger grade)
+    void updateGroupByGroupId(BigInteger seminar_group_id, BigInteger grade)
             throws GroupNotFoundException, IllegalArgumentException;
 
     /**
