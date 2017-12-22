@@ -30,8 +30,8 @@ public interface ClassService {
 	 * @param courseName 课程名称
 	 * @param teacherName 教师名称
 	 * @return List 班级列表
-	 * @see ClassService #listClassByCourseName(String courseName)
-	 * @see ClassService #listClassByTeacherName(String teacherName)
+	 * @see CourseService #listClassByCourseName(String courseName)
+	 * @see CourseService #listClassByTeacherName(String teacherName)
 	 * @exception UserNotFoundException 无此姓名的教师
 	 * @exception CourseNotFoundException 无此名称的课程
 	 */
