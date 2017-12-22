@@ -108,8 +108,8 @@ public interface CourseService {
 
 
 	/**
-	 * 根据教师ID获取班级列表.
-	 * <p>根据教师ID获取班级列表<br>
+	 * 根据用户ID获取班级列表.
+	 * <p>根据用户ID判断身份，获取班级列表<br>
 	 * @author YeXiaona
 	 * @param userId 教师ID
 	 * @return list 班级列表
