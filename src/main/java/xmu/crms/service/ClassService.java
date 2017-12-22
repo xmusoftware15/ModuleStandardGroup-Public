@@ -128,7 +128,6 @@ public interface ClassService {
 	 * @param classId 班级id
 	 * @param seminarId  讨论课id
 	 * @return location 该班级签到状态
-	 * @see SeminarGroupService #listSeminarGroupBySeminarId(BigInteger seminarId)
 	 * @exception SeminarNotFoundException 无此Id的讨论课
 	 */
 	 Location getCallStatusById(BigInteger classId,BigInteger seminarId)
