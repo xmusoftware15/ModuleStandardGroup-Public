@@ -130,11 +130,11 @@ public interface ClassService {
 	 * 
 	 * @author yexiaona
 	 * @param seminarId  讨论课id
-	 * @return classBO 班级
+	 * @return location 班级签到状态
 	 * @see SeminarGroupService #listSeminarGroupBySeminarId(BigInteger seminarId)
 	 * @exception SeminarNotFoundException 无此Id的讨论课
 	 */
-	 ClassInfo getCallStatusById(BigInteger seminarId)
+	 Location getCallStatusById(BigInteger seminarId)
 	         throws SeminarNotFoundException;
 
 	/**
@@ -145,11 +145,12 @@ public interface ClassService {
 	 * @author yexiaona
 	 * @param userId  教师id
 	 * @param courseId 课程id
+	 * @param classInfo 班级信息
 	 * @return classId 班级Id
      * @exception UserNotFoundException 无此Id的教师
      * @exception CourseNotFoundException 无此Id的课程
 	 */
-	 BigInteger insertClassById(BigInteger userId, BigInteger courseId) throws
+	 BigInteger insertClassById(BigInteger userId, BigInteger courseId,ClassInfo classInfo) throws
 	             UserNotFoundException,CourseNotFoundException;
 
 	/**
