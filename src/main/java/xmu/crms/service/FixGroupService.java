@@ -22,13 +22,11 @@ public interface FixGroupService {
 
     /**
      * 按班级Id添加固定分组.
-     * <p>按ClassId删除FixGroupMember<br>
-     *
+     * 
      * @param classId 固定分组Id
      * @param userId  队长的Id
      * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
      * @throws IllegalArgumentException 信息不合法，id格式错误
-     * @throws ClassesNotFoundException 未找到班级
      * @throws UserNotFoundException    不存在该学生
      * @author zhouzhongjun
      */
