@@ -72,7 +72,7 @@ public class TimerService {
             try {
                 Object bean = applicationContext.getBean(event.getBeanName());
                 Method callback = BeanUtils.findMethod(bean.getClass(), event.getMethodName());
-                callback.invoke(applicationContext.getBean(event.getBeanName()), event.getMap().values().toArray());
+                callback.invoke(bean, event.getMap().values().toArray());
             } catch (IllegalAccessException | InvocationTargetException e) {
                 e.printStackTrace();
 
