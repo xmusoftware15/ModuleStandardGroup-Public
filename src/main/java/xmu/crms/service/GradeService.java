@@ -90,30 +90,16 @@ public interface GradeService {
     Boolean updateGroupByGroupId(BigInteger seminar_group_id, BigInteger grade)
             throws GroupNotFoundException, IllegalArgumentException;
 
+
     /**
      * 定时器方法.
-     * 讨论课结束后计算展示得分.
+     * 讨论课结束后计算本次展示得分与讨论课得分.
      * <p>条件: 讨论课已结束<br>*GradeService<br>
      *
      * @param seminarId      讨论课ID
-     * @param seminarGroupId 小组ID
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
      */
-    void countPresentationGrade(BigInteger seminarId, BigInteger seminarGroupId) throws IllegalArgumentException;
-
-
-    /**
-     * 定时器方法.
-     * 讨论课结束后计算本次讨论课得分.
-     * <p>条件: 讨论课已结束，展示得分已算出<br>*GradeService<br>
-     *
-     * @param seminarId      讨论课ID
-     * @param seminarGroupId 小组ID
-     * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
-     * @author qinlingyun
-     */
-    void countGroupGradeBySerminarId(BigInteger seminarId, BigInteger seminarGroupId) throws IllegalArgumentException;
-
-
+    @CrmsEvent(table = "seminar", timeColumn = "end_time", paramColumns = {"id"})
+    void countGradeBySerminarId(BigInteger seminarId) throws IllegalArgumentException;
 }

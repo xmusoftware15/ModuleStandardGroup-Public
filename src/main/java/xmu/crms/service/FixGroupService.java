@@ -193,6 +193,7 @@ public interface FixGroupService {
 	 * @param semianrId 讨论课ID
 	 * @param fixedGroupId 小组ID
 	 */
-	 void fixedGroupToSeminarGroup(BigInteger semianrId, BigInteger fixedGroupId);
+	@CrmsEvent(table = "seminar", timeColumn = "start_time", paramColumns = {"id"}, whereColumns = {"is_fixed = 1"})
+	void fixedGroupToSeminarGroup(BigInteger semianrId, BigInteger fixedGroupId);
 
 }

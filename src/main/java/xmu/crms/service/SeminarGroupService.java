@@ -182,7 +182,8 @@ public interface SeminarGroupService {
 	 * @exception ClassesNotFoundException 未找到班级
 	 * @exception SeminarNotFoundException 未找到讨论课
 	 */
-	 void automaticallyGrouping(BigInteger seminarId,BigInteger classId) throws
+	@CrmsEvent(table = "seminar", timeColumn = "start_time", paramColumns = {"id"}, whereColumns = {"is_fixed = 0"})
+	void automaticallyGrouping(BigInteger seminarId,BigInteger classId) throws
 			IllegalArgumentException,ClassesNotFoundException,SeminarNotFoundException;
 
 
