@@ -213,4 +213,16 @@ public interface ClassService {
 	 */
 	 void updateScoreRule(BigInteger classId, ClassInfo proportions)
              throws InvalidOperationException,ClassNotFoundException;
+	 
+	 /**
+		 * 老师发起签到.
+		 * <p>往location表插入一条当前讨论课班级的签到状态<br>
+		 * 
+		 * @param location 当前讨论课班级的签到状态记录
+		 * @return 返回location表的新记录的id
+	     * @exception SeminarNotFoundException 讨论课没有找到
+	     * @exception ClassNotFoundException 无此Id的班级 
+		 */
+		 BigInteger CallInRollById(Location location)
+	             throws SeminarNotFoundException,ClassNotFoundException;
 }
