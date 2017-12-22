@@ -1,4 +1,4 @@
-package xmu.crms.service;
+﻿package xmu.crms.service;
 import java.math.BigInteger;
 import java.util.List;
 import xmu.crms.exception.*;
@@ -67,7 +67,6 @@ public interface CourseService {
 	 * @see SeminarService #deleteSemiarByCourseId(BigInteger courseId)
 	 * @see ClassService   #deleteClassByCourseId(BigInteger courseId)
 	 * @exception IllegalArgumentException courseId格式错误时抛出
-	 * @exception CourseNotFoundException 未找到课程
 	 */
 	 void deleteCourseByCourseId(BigInteger courseId)throws IllegalArgumentException,CourseNotFoundException;
 
