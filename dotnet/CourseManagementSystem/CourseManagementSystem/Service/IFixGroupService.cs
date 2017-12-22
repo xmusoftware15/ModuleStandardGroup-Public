@@ -154,12 +154,14 @@ namespace Xmu.Crms.Shared.Service
         void UpdateSeminarGroupById(long groupId, SeminarGroup group);
 
         ///<summary>
-        ///定时器方法:课前将固定小组复制一份作为讨论课小组名单
+        ///课前将固定小组作为讨论课小组名单
         ///@author qinlingyun
-        ///条件: 讨论课上课前    *SeminarGroupService
+        ///
         /// </summary>
         /// <param name="seminarId">讨论课Id</param>
-        /// <param name="fixedg]GroupId"小组的Id</param>
+        /// <param name="fixedg]GroupId">小组的Id</param>
+        /// <exception cref="T:System.ArgumentException">id格式错误</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
         void fixedGroupToSeminarGroup(long semianrId, long fixedGroupId);
     }
 }

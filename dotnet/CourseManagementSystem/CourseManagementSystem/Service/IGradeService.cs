@@ -29,17 +29,6 @@ namespace Xmu.Crms.Shared.Service
         SeminarGroup GetSeminarGroupBySeminarGroupId(long userId, long seminarGroupId);
 
         /// <summary>
-        /// 获取某学生所有讨论课的成绩.
-        /// @author qinlingyun
-        /// 获取某学生所有讨论课的详细信息（包括成绩）
-        /// </summary>
-        /// <param name="userId">学生id</param>
-        /// <returns>list 学生历史讨论课小组列表（包含成绩）</returns>
-        /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupIdByStudentId(System.Int64)"/>
-        /// <seealso cref="M:Xmu.Crms.Shared.Service.IGradeService.GetSeminarGroupBySeminarGroupId(System.Int64, System.Int64)"/>
-        List<SeminarGroup> ListSeminarGradeBySeminarGroupId(long userId);
-
-        /// <summary>
         /// 按课程id获取学生该课程所有讨论课
         /// @author qinlingyun
         /// 通过课程id获取该课程下学生所有讨论课详细信息（包括成绩）
@@ -58,10 +47,11 @@ namespace Xmu.Crms.Shared.Service
         /// @author Huhui
         /// </summary>
         /// <param name="userId">用户id</param>
+        /// <param name="topicId">话题Id</param>
         /// <param name="seminarId">讨论课Id</param>
         /// <param name="groupId">小组Id</param>
         /// <param name="grade">分数</param>
-        void InsertGroupGradeByUserId(long userId, long seminarId, long groupId, long grade);
+        void InsertGroupGradeByUserId(long topicId, long userId, long seminarId, long groupId, int grade);
 
         /// <summary>
         /// 按ID设置小组报告分.
