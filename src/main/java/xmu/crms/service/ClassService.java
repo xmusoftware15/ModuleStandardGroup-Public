@@ -98,11 +98,11 @@ public interface ClassService {
 	 * @author yexiaona
 	 * @param userId 用户id
 	 * @param classId 班级id
-	 * @return url 选课url
+	 * @return courseSelectionId 选课记录id
      * @exception UserNotFoundException 无此姓名的教师
      * @exception ClassNotFoundException 无此Id的班级
 	 */
-	 String insertCourseSelectionById(BigInteger userId, BigInteger classId) throws
+	 BigInteger insertCourseSelectionById(BigInteger userId, BigInteger classId) throws
 	         UserNotFoundException,ClassNotFoundException;
 
 	/**
