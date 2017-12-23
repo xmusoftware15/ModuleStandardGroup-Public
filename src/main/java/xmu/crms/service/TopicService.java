@@ -81,7 +81,7 @@ public interface TopicService {
      * @throws IllegalArgumentException groupId格式错误或topicId格式错误时抛出
      * @author zhouzhongjun
      */
-    void deleteTopicById(BigInteger groupId, BigInteger topicId) throws IllegalArgumentException;
+    void deleteSeminarGroupTopicById(BigInteger groupId, BigInteger topicId) throws IllegalArgumentException;
 
     /**
      * 按topicId删除SeminarGroupTopic表信息.
