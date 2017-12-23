@@ -11,7 +11,7 @@ import xmu.crms.exception.*;
 /**
  *
  * @author Heqi
- * @version 2.10
+ * @version 2.20
  *
  */
 public interface SeminarService {

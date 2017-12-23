@@ -9,6 +9,6 @@ CourseService£º10
 SeminarService£º8
 TopicService£º13
 SchoolService£º5
-TimerService£º5
+TimerService£º10
 LoginService: 15
 Exception£º5

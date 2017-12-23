@@ -1,4 +1,4 @@
-﻿package xmu.crms.service;
+package xmu.crms.service;
 
 import java.math.BigInteger;
 import java.util.List;
@@ -9,7 +9,7 @@ import xmu.crms.entity.*;
 
 /**
  * @author CaoXingmei
- * @version 2.10
+ * @version 2.20
  */
 public interface CourseService {
     /**
@@ -97,7 +97,7 @@ public interface CourseService {
      * @see CourseService #listCourseByCourseName(String courseName)
      * @see ClassService #listClassByCourseId(BigInteger courseId)
      */
-    List<ClassInfo> listClassByCourseName(String courseName);
+    List<ClassInfo> listClassByCourseName(String courseName) throws CourseNotFoundException;
 
 
     /**
@@ -111,8 +111,7 @@ public interface CourseService {
      * @see CourseService #listCourseByUserId(BigInteger)
      * @see ClassService #listClassByCourseId(BigInteger)
      */
-    List<ClassInfo> listClassByTeacherName(String teacherName);
-
+    List<ClassInfo> listClassByTeacherName(String teacherName) throws UserNotFoundException,ClassesNotFoundException;
 
 }
 

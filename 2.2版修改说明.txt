@@ -1,0 +1,43 @@
+由于之前标准组commit未将修改写得清楚，因此特出一版修改文档，2.2版之后每次commit都会写明修改内容，请大家自行到github上查看修改详细信息。
+
+1.除非有特例，否则基本所有insert返回值修改为BigInteger，delete和update返回值为void，以及entity实体以数据库为准，我们为了方便也提供entity，但不保证是最新的。同时，针对某些Service提高了工作量，但考虑到基本大家都选完了模块，因此工作量底线不会更改。
+
+2.SeminarService：查询讨论课为Seminar getSeminarBySeminarId（seminarId），其余两个已经删除
+
+3.CourseService：更新课程增加了异常返回
+
+4.FixGroupService 
+（1）删除  insertFixGroupByClassId方法的一个异常 ClassesNotFoundException
+
+5.ClassService   
+（1）添加  老师发起签到方法
+（2）修改  获取该班级签到状态getsCallGroupStatusById 的 方法名字改为getCallStatusById 方法描述改为“老师获取签到状态” 返回值改为Location，参数改为classId和seminarId
+（3）修改  添加班级方法insertClassById 的 参数增加一个ClassInfo classInfo
+（4）修改  将delete和update的方法 返回值从Boolean改为void
+（5）移动  将listClassByUserId 方法描述改为根据学生id获取班级列表 移动到ClassService中
+（6）修改  将插入选课记录insertCourseSelectionById方法 返回值从String url改为BigInteger courseSelectionId选课记录id
+（7）删除 将insertClassById参数中的userId（教师id）去掉，不需要userId。
+
+
+6.GradeService
+（1）修改  将getSeminarGroupBySeminarId修改为getSeminarGroupBySeminarGroupId，并且把参数seminarId改为seminarGroupId。
+（2）修改  将delete和update的方法 返回值从Boolean改为void
+（3）修改：SeminarGroup getSeminarGroupBySeminarId(BigInteger seminarId) 
+
+7.TopicService
+（1）修改  将delete和update的方法 返回值从Boolean改为void
+（2）修改  将删除小组选题deleteTopicById 名字改为 deleteSeminarGroupTopicById
+（3）增加  增加一个方法listSeminarGroupTopicByGroupId，获取该堂讨论课该小组所有选题
+
+8.SeminarGroupService
+（1）修改  getSeminarGroupByGroupId(BigInteger groupId) 里将返回值改成SeminarGroup，若需要返回成员，则需额外调用listSeminarGroupMemberByGroupId方法
+（2）新增 deleteSeminarGroupByGroupId方法新增了一个GroupNotFoundException小组没找到的异常。
+
+
+9、TimerService：
+（1）timer修改update方法和调用频率
+（2）为了明确逻辑，覃玲芸同学呕心沥血私下多画了一个流程图，大家可以参考流程图实现TimerService。
+
+10.LoginService：
+（1）增加 微信登录后用户绑定
+

@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.Scheduled;
  * 定时器
  * 
  * @author qinlingyun liuaiqi
- * @version 2.10
+ * @version 2.20
  */
 public interface TimerService {
 
