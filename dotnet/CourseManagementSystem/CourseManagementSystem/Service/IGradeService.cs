@@ -48,10 +48,9 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userId">用户id</param>
         /// <param name="topicId">话题Id</param>
-        /// <param name="seminarId">讨论课Id</param>
         /// <param name="groupId">小组Id</param>
         /// <param name="grade">分数</param>
-        void InsertGroupGradeByUserId(long topicId, long userId, long seminarId, long groupId, int grade);
+        void InsertGroupGradeByUserId(long topicId, long userId, long groupId, int grade);
 
         /// <summary>
         /// 按ID设置小组报告分.

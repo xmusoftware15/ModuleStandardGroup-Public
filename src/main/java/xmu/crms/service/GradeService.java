@@ -1,11 +1,10 @@
 package xmu.crms.service;
 
-import xmu.crms.entity.Seminar;
-import xmu.crms.entity.SeminarGroup;
-import xmu.crms.exception.GroupNotFoundException;
-
 import java.math.BigInteger;
 import java.util.List;
+
+import xmu.crms.entity.SeminarGroup;
+import xmu.crms.exception.GroupNotFoundException;
 
 /**
  * @author Yexiaona
@@ -23,17 +22,16 @@ public interface GradeService {
     void deleteStudentScoreGroupByTopicId(BigInteger seminarGroupTopicId) throws IllegalArgumentException;
 
     /**
-     * 获取某学生一堂讨论课信息.
-     * <p>获取某学生一堂讨论课的详细信息（包括成绩）<br>
+     * 获取学生某一堂讨论课的小组信息.
+     * <p>获取某学生一堂讨论课的小组信息（包括成绩）<br>
      *
-     * @param userId         学生id
-     * @param seminarGroupId 讨论课小组id
+     * @param seminarId 讨论课小组id
      * @return seminarGroup 讨论课小组信息（包括成绩）
      * @throws xmu.crms.exception.GroupNotFoundException 无此小组
      * @throws IllegalArgumentException                  userId或seminarGrouopId格式错误
      * @author qinlingyun
      */
-    SeminarGroup getSeminarGroupBySeminarGroupId(BigInteger userId, BigInteger seminarGroupId)
+    SeminarGroup getSeminarGroupBySeminarId(BigInteger seminarId)
             throws GroupNotFoundException, IllegalArgumentException;
 
     /**
