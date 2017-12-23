@@ -106,16 +106,6 @@ public interface CourseService {
 	 List<ClassInfo> listClassByTeacherName(String teacherName);
 
 
-	/**
-	 * 根据学生ID获取班级列表.
-	 * <p>根据学生ID获取班级列表<br>
-	 * @author YeXiaona
-	 * @param userId 学生ID
-	 * @return list 班级列表
-	 * @see ClassService #getClassByClassId(BigInteger classId)
-	 * @exception IllegalArgumentException userId格式错误时抛出或courseId格式错误时抛出
-	 * @exception ClassNotFoundException 未找到班级
-	 */
-	 List<ClassInfo> listClassByUserId(BigInteger userId)throws IllegalArgumentException,ClassNotFoundException;
+
 }
 
