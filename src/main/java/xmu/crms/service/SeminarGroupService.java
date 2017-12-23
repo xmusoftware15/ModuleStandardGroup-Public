@@ -15,7 +15,7 @@ import xmu.crms.exception.UserNotFoundException;
 
 /**
  * @author zhouzhongjun
- * @version 2.10
+ * @version 2.20
  */
 public interface SeminarGroupService {
 

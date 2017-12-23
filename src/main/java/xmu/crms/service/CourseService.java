@@ -9,7 +9,7 @@ import xmu.crms.entity.*;
 
 /**
  * @author CaoXingmei
- * @version 2.10
+ * @version 2.20
  */
 public interface CourseService {
     /**
