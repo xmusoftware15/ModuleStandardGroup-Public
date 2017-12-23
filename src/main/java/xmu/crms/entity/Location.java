@@ -47,4 +47,15 @@ public class Location {
 		this.status = status;
 	}
 
+	@Override
+	public String toString() {
+		return "Location{" +
+				"id=" + id +
+				", classInfo=" + classInfo +
+				", seminar=" + seminar +
+				", longitude=" + longitude +
+				", latitude=" + latitude +
+				", status=" + status +
+				'}';
+	}
 }

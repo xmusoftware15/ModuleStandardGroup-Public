@@ -4,6 +4,8 @@ import java.math.BigInteger;
 import java.util.Date;
 import java.util.HashMap;
 
+import org.springframework.scheduling.annotation.Scheduled;
+
 /**
  * 定时器
  * 
@@ -36,6 +38,7 @@ public interface TimerService {
 	 * 每十分钟检查一次Event实体的状况
 	 * @author qinlingyun
 	 */
+	 @Scheduled(fixedRate = 1000)
 	 void scheduled();
 		
 }
