@@ -31,7 +31,7 @@ public interface FixGroupService {
      * @author zhouzhongjun
      */
     public BigInteger insertFixGroupByClassId(BigInteger classId, BigInteger userId) throws
-            IllegalArgumentException, ClassesNotFoundException, UserNotFoundException;
+            IllegalArgumentException, UserNotFoundException;
 
     /**
      * 按FixGroupId删除FixGroupMember.
