@@ -174,19 +174,6 @@ public interface FixGroupService {
             IllegalArgumentException, ClassesNotFoundException, UserNotFoundException;
 
     /**
-     * 根据groupId修改group.
-     * <p>根据groupId修改group<br>
-     *
-     * @param groupId 要修改的group的Id
-     * @param group   新的group信息
-     * @throws IllegalArgumentException  信息不合法，id格式错误
-     * @throws FixGroupNotFoundException 未找到小组
-     * @author aixing
-     */
-    public void updateSeminarGroupById(BigInteger groupId, SeminarGroup group) throws
-            IllegalArgumentException, FixGroupNotFoundException;
-
-    /**
      * 将固定小组作为讨论课小组名单.
      *
      * @param semianrId    讨论课ID
