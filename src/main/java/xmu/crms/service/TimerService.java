@@ -26,12 +26,9 @@ public interface TimerService {
 	/**
 	 * 更新Event表.
 	 * @author qinlingyun
-	 * @param time 事件的时间
-	 * @param beanName 对象名
-	 * @param methodName 方法名
-	 * @param paramMap 方法参数
+	 * @param eventId 事件的ID
 	 */	 
-	 void updateEvent(Date time, String beanName, String methodName, HashMap<BigInteger, String> paramMap);
+	 void updateEvent(BigInteger eventId);
 
 	 
 	/**
