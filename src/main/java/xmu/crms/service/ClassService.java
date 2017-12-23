@@ -229,9 +229,9 @@ public interface ClassService {
      * @param userId 学生ID
      * @return list 班级列表
      * @throws IllegalArgumentException userId格式错误时抛出或courseId格式错误时抛出
-     * @throws ClassNotFoundException   未找到班级
+     * @throws ClassesNotFoundException   未找到班级
      * @author YeXiaona
      * @see ClassService #getClassByClassId(BigInteger classId)
      */
-    List<ClassInfo> listClassByUserId(BigInteger userId) throws IllegalArgumentException, ClassNotFoundException;
+    List<ClassInfo> listClassByUserId(BigInteger userId) throws IllegalArgumentException, ClassesNotFoundException;
 }
