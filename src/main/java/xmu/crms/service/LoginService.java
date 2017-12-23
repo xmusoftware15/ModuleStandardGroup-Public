@@ -6,7 +6,7 @@ import xmu.crms.entity.*;
 import xmu.crms.exception.*;
 
 /**
- * @author Huhui
+ * @author Huhui AiXing
  * @version 2.10
  */
 public interface LoginService {
@@ -23,8 +23,15 @@ public interface LoginService {
 	 * @exception UserNotFoundException 登录失败时抛出
 	 */
 	 User signInWeChat(BigInteger userId,String code,String state,String successUrl) throws UserNotFoundException;
-	
-	
+
+	/**
+	 * 微信登录后用户绑定.
+	 * <p>User中只有phone和password，userId是注册后才有并且在数据库自增<br>
+	 * @param user 用户信息
+	 * @throws IllegalArgumentException user中信息有误
+	 */
+	 void signUpWeChat(User user) throws IllegalArgumentException;
+
 	/**
 	 * 手机号登录.
 	 * <p>手机号登录 (.Net使用),User中只有phone和password，用于判断用户名密码是否正确<br>
