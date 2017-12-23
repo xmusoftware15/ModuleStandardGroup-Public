@@ -38,7 +38,7 @@ public interface TimerService {
 	 * 每十分钟检查一次Event实体的状况
 	 * @author qinlingyun
 	 */
-	 @Scheduled(fixedRate = 1000)
+	 @Scheduled(fixedRate = 1000*60*10)
 	 void scheduled();
 		
 }
