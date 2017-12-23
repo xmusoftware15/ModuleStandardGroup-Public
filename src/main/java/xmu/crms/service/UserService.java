@@ -26,12 +26,13 @@ public interface UserService {
 	 * @param userId 学生的id
 	 * @param longitude 经度
 	 * @param latitude 纬度
+	 * @return id 该记录的id
 	 * @exception IllegalArgumentException 信息不合法，id格式错误 
 	 * @exception ClassesNotFoundException 未找到班级
 	 * @exception SeminarNotFoundException 未找到讨论课
 	 * @exception UserNotFoundException 未找到对应用户
 	 */
-	void insertAttendanceById(BigInteger classId, BigInteger seminarId,
+	BigInteger insertAttendanceById(BigInteger classId, BigInteger seminarId,
 							  BigInteger userId, double longitude, double latitude) throws
 			IllegalArgumentException,ClassesNotFoundException,SeminarNotFoundException,UserNotFoundException;
 
