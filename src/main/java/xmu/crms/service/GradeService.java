@@ -41,7 +41,7 @@ public interface GradeService {
      * @return list 学生历史讨论课小组列表（包含成绩）
      * @throws IllegalArgumentException userId格式错误
      * @author qinlingyun
-     * @see SeminarGroupService#listSeminarGroupIdByStudentId(BigInteger)
+     * @see SeminarGroupService#listSeminarGroupIdByStudent(BigInteger) 
      * @see GradeService#getSeminarGroupBySeminarGroupId(BigInteger)
      */
     List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
