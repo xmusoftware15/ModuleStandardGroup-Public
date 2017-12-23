@@ -17,7 +17,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>List 讨论课列表</returns>
         /// <exception cref="T:System.ArgumentException">格式错误、教师设置embedGrade为true时抛出</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.CourseNotFoundException">未找到该课程时抛出</exception>
-        List<Seminar> ListSeminarByCourseId(long courseId);
+        IList<Seminar> ListSeminarByCourseId(long courseId);
 
 
         /// <summary>

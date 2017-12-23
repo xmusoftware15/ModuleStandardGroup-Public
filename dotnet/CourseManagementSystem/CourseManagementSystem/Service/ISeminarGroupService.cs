@@ -37,7 +37,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>List 讨论课小组成员信息</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.GroupNotFoundException">未找到小组</exception>
-        List<UserInfo> ListSeminarGroupMemberByGroupId(long groupId);
+        IList<UserInfo> ListSeminarGroupMemberByGroupId(long groupId);
 
         /// <summary>
         /// 获取某学生所有的讨论课小组.
@@ -46,7 +46,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="userId">学生id</param>
         /// <returns>list 讨论课小组列表</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        List<SeminarGroup> ListSeminarGroupIdByStudentId(long userId);
+        IList<SeminarGroup> ListSeminarGroupIdByStudentId(long userId);
 
         /// <summary>
         /// 查询讨论课小组队长id.
@@ -66,7 +66,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>讨论课小组列表</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到小组</exception>
-        List<SeminarGroup> ListSeminarGroupBySeminarId(long seminarId);
+        IList<SeminarGroup> ListSeminarGroupBySeminarId(long seminarId);
 
         /// <summary>
         /// 按seminarId删除讨论课小组信息.
@@ -164,7 +164,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>List&lt;GroupBO&gt;所有选择该话题的所有group的信息</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.GroupNotFoundException">未找到小组</exception>
-        List<SeminarGroup> ListGroupByTopicId(long topicId);
+        IList<SeminarGroup> ListGroupByTopicId(long topicId);
 
         /// <summary>
         /// 小组按id选择话题.

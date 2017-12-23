@@ -40,7 +40,7 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarService.ListSeminarByCourseId(System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IGradeService.ListSeminarGradeByUserId(System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupBySeminarId(System.Int64)"/>
-        List<SeminarGroup> ListSeminarGradeByCourseId(long userId, long courseId);
+        IList<SeminarGroup> ListSeminarGradeByCourseId(long userId, long courseId);
 
         /// <summary>
         /// 提交对其他小组的打分.
@@ -67,7 +67,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userId">用户id</param>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupBySeminarId(System.Int64)"/>
-        List<SeminarGroup> ListSeminarGradeByStudentId(long userId);
+        IList<SeminarGroup> ListSeminarGradeByStudentId(long userId);
 
         /// <summary>
         /// 定时器方法:讨论课结束后计算展示得分.
@@ -87,8 +87,6 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="seminarId">讨论课id</param>
         /// <param name="seminarGroupId">讨论课组id</param>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        void CountGroupGradeBySerminarId(long seminarId, long seminarGroupId)
-
-
+        void CountGroupGradeBySerminarId(long seminarId, long seminarGroupId);
     }
 }

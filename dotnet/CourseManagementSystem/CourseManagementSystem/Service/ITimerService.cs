@@ -13,20 +13,20 @@ namespace Xmu.Crms.Shared.Service
         ///向Event表插入数据.
         ///@author qinlingyun
         /// </summary>
-        /// <param name="Time">事件的时间</param>
-        /// <param name="Bean">方法名称</param>
-        /// <param name="Parameter">方法参数</param>
+        /// <param name="time">事件的时间</param>
+        /// <param name="bean">方法名称</param>
+        /// <param name="parameter">方法参数</param>
         /// 
-        void InsertEvent(DateTime Time, string Bean, string Parameter);
+        void InsertEvent(DateTime time, string bean, string parameter);
 
         ///<summary>
         ///更新Event表.
         ///@author qinlingyun
         /// </summary>
-        /// <param name="Time">事件的时间</param>
-        /// <param name="Bean">方法名称</param>
-        /// <param name="Parameter">方法参数</param>
-        void UpdateEvent(DateTime Time, string Bean, string Parameter);
+        /// <param name="time">事件的时间</param>
+        /// <param name="bean">方法名称</param>
+        /// <param name="parameter">方法参数</param>
+        void UpdateEvent(DateTime time, string bean, string parameter);
 
 
         ///<summary>

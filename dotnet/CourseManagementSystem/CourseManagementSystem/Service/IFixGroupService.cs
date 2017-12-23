@@ -47,7 +47,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>List 固定小组成员信息</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
-        List<UserInfo> ListFixGroupMemberByGroupId(long groupId);
+        IList<UserInfo> ListFixGroupMemberByGroupId(long groupId);
 
         /// <summary>
         /// 按classId查找FixGroup信息.
@@ -56,7 +56,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="classId">班级Id</param>
         /// <returns>null 固定分组列表</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        List<FixGroup> ListFixGroupByClassId(long classId);
+        IList<FixGroup> ListFixGroupByClassId(long classId);
 
         /// <summary>
         /// 按classId删除FixGroup
@@ -101,7 +101,7 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IFixGroupService.ListFixGroupMemberByGroupId(System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
-        List<FixGroupMember> GetFixGroupByGroupId(long groupId);
+        IList<FixGroupMember> GetFixGroupByGroupId(long groupId);
 
         ///<summary>
         ///将学生加入小组
@@ -115,7 +115,7 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">不存在该学生</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.InvalidOperationException">待添加学生已经在小组里了</exception>
-        long insertStudentIntoGroup(long userId, long groupId);
+        long InsertStudentIntoGroup(long userId, long groupId);
 
         /// <summary>
         /// 小组取消话题.
@@ -159,9 +159,9 @@ namespace Xmu.Crms.Shared.Service
         ///
         /// </summary>
         /// <param name="seminarId">讨论课Id</param>
-        /// <param name="fixedg]GroupId">小组的Id</param>
+        /// <param name="fixedGroupId">小组的Id</param>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
-        void fixedGroupToSeminarGroup(long semianrId, long fixedGroupId);
+        void FixedGroupToSeminarGroup(long seminarId, long fixedGroupId);
     }
 }

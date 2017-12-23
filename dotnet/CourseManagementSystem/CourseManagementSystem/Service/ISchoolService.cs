@@ -15,7 +15,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="city">城市名称</param>
         /// <returns>list 学校列表</returns>
-        List<School> ListSchoolByCity(string city);
+        IList<School> ListSchoolByCity(string city);
 
         /// <summary>
         /// 添加学校.
@@ -30,7 +30,7 @@ namespace Xmu.Crms.Shared.Service
         /// @author LiuAiqi
         /// </summary>
         /// <returns>list 省份名称列表</returns>
-        List<string> ListProvince();
+        IList<string> ListProvince();
 
         /// <summary>
         /// 获取城市列表.
@@ -38,7 +38,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="province">省份名称</param>
         /// <returns>list 城市名称列表</returns>
-        List<string> ListCity(string province);
+        IList<string> ListCity(string province);
 
         /// <summary>
         /// 获取学校信息.

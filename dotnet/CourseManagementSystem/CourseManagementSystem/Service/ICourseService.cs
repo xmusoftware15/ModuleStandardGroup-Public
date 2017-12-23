@@ -17,7 +17,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>null 课程列表</returns>
         /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.CourseNotFoundException">未找到课程</exception>
-        List<Course> ListCourseByUserId(long userId);
+        IList<Course> ListCourseByUserId(long userId);
 
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="courseName">课程名称</param>
         /// <returns>list 课程列表</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.GetCourseByCourseId(System.Int64)"/>
-        List<Course> ListCourseByCourseName(string courseName);
+        IList<Course> ListCourseByCourseName(string courseName);
 
 
         /// <summary>
@@ -81,7 +81,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>list 班级列表</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByCourseName(System.String)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.ListClassByCourseId(System.Int64)"/>
-        List<ClassInfo> ListClassByCourseName(string courseName);
+        IList<ClassInfo> ListClassByCourseName(string courseName);
 
 
         /// <summary>
@@ -92,7 +92,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>list 班级列表</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListUserIdByUserName(System.String)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListClassByUserId(System.Int64)"/>
-        List<ClassInfo> ListClassByTeacherName(string teacherName);
+        IList<ClassInfo> ListClassByTeacherName(string teacherName);
 
 
         /// <summary>
@@ -104,6 +104,6 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.ListClassByCourseId(System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
-        List<ClassInfo> ListClassByUserId(long userId);
+        IList<ClassInfo> ListClassByUserId(long userId);
     }
 }

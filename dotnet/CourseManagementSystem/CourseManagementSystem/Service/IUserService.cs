@@ -35,7 +35,7 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到班级</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到讨论课</exception>
-        List<Attendance> ListAttendanceById(long classId, long seminarId);
+        IList<Attendance> ListAttendanceById(long classId, long seminarId);
 
         /// <summary>
         /// 根据用户Id获取用户的信息.
@@ -54,7 +54,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userName">用户名</param>
         /// <returns>userId 用户ID</returns>
-        List<long> ListUserIdByUserName(string userName);
+        IList<long> ListUserIdByUserName(string userName);
 
         /// <summary>
         /// 根据用户ID修改用户信息.
@@ -77,7 +77,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>list 用户列表</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到对应班级</exception>
-        List<UserInfo> ListUserByClassId(long classId, string numBeginWith, string nameBeginWith);
+        IList<UserInfo> ListUserByClassId(long classId, string numBeginWith, string nameBeginWith);
 
         /// <summary>
         /// 根据用户名获取用户列表.
@@ -85,7 +85,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userName">用户名</param>
         /// <returns>list 用户列表</returns>
-        List<UserInfo> ListUserByUserName(string userName);
+        IList<UserInfo> ListUserByUserName(string userName);
 
         /// <summary>
         /// 获取讨论课所在的班级的出勤学生名单.
@@ -97,7 +97,7 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListAttendanceById(System.Int64,System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.GetUserByUserId(System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        List<UserInfo> ListPresentStudent(long seminarId, long classId);
+        IList<UserInfo> ListPresentStudent(long seminarId, long classId);
 
         /// <summary>
         /// 获取讨论课所在的班级的迟到学生名单.
@@ -111,7 +111,7 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到对应班级</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到对应讨论课</exception>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        List<UserInfo> ListLateStudent(long seminarId, long classId);
+        IList<UserInfo> ListLateStudent(long seminarId, long classId);
 
         /// <summary>
         /// 获取讨论课所在班级缺勤学生名单.
@@ -124,7 +124,7 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到对应班级</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到对应讨论课</exception>
-        List<UserInfo> ListAbsenceStudent(long seminarId, long classId);
+        IList<UserInfo> ListAbsenceStudent(long seminarId, long classId);
 
         /// <summary>
         /// 根据教师名称列出课程名称.
@@ -134,6 +134,6 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>list 课程列表</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListUserByUserName(System.String)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
-        List<Course> ListCourseByTeacherName(string teacherName);
+        IList<Course> ListCourseByTeacherName(string teacherName);
     }
 }

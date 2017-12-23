@@ -45,7 +45,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="seminarId">课程Id</param>
         /// <returns>null</returns>
         /// <exception cref="T:System.ArgumentException">Id格式错误时抛出</exception>
-        List<Topic> ListTopicBySeminarId(long seminarId);
+        IList<Topic> ListTopicBySeminarId(long seminarId);
 
 
         /// <summary>

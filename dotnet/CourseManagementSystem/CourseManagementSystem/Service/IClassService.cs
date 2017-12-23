@@ -23,7 +23,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="courseName">课程名称</param>
         /// <param name="teacherName">教师名称</param>
         /// <returns>List 班级列表</returns>
-        List<ClassInfo> ListClassByName(string courseName, string teacherName);
+        IList<ClassInfo> ListClassByName(string courseName, string teacherName);
 
         /// <summary>
         /// 根据课程ID获得班级列表.
@@ -31,7 +31,7 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="courseId">课程ID</param>
         /// <returns>list 班级列表</returns>
-        List<ClassInfo> ListClassByCourseId(long courseId);
+        IList<ClassInfo> ListClassByCourseId(long courseId);
 
         /// <summary>
         /// 按班级id获取班级详情.
