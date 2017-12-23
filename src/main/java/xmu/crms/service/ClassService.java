@@ -134,18 +134,16 @@ public interface ClassService {
     /**
      * 新建班级.
      * <p>
-     * 根据教师id和课程id新建班级<br>
+     * 根据课程id新建班级<br>
      *
-     * @param userId    教师id
      * @param courseId  课程id
      * @param classInfo 班级信息
      * @return classId 班级Id
-     * @throws UserNotFoundException   无此Id的教师
      * @throws CourseNotFoundException 无此Id的课程
-     * @author yexiaona
+     * @author ixing
      */
-    BigInteger insertClassById(BigInteger userId, BigInteger courseId, ClassInfo classInfo) throws
-            UserNotFoundException, CourseNotFoundException;
+    BigInteger insertClassById(BigInteger courseId, ClassInfo classInfo) throws
+            CourseNotFoundException;
 
     /**
      * 按courseId删除Class.
