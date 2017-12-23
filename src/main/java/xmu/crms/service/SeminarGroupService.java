@@ -117,7 +117,7 @@ public interface SeminarGroupService {
 	 * @return BigInteger 若创建成功返回该小组的id，失败则返回-1
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
 	 */
-	 BigInteger insertSeminarGroupBySeminarId(BigInteger seminarId,
+	 BigInteger insertSeminarGroupBySeminarId(BigInteger seminarId,BigInteger classId,
 													SeminarGroup seminarGroup) throws IllegalArgumentException;
 
 	/**
@@ -183,9 +183,13 @@ public interface SeminarGroupService {
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
 	 * @exception ClassesNotFoundException 未找到班级
 	 * @exception SeminarNotFoundException 未找到讨论课
+	 * @exception GroupNotFoundException 未找到小组
+	 * @exception UserNotFoundException 学生不存在
+	 * @exception InvalidOperationException 无效操作
 	 */
 	 void automaticallyGrouping(BigInteger seminarId,BigInteger classId) throws
-			IllegalArgumentException,ClassesNotFoundException,SeminarNotFoundException;
+			IllegalArgumentException,ClassesNotFoundException,SeminarNotFoundException,
+	 GroupNotFoundException,UserNotFoundException,InvalidOperationException;
 
 
 	/**
@@ -247,8 +251,10 @@ public interface SeminarGroupService {
 	 * @param userId  学生id
 	 * @exception IllegalArgumentException (信息不合法，id格式错误)
 	 * @exception GroupNotFoundException (未找到小组)
+	 * @exception UserNotFoundException 不存在该学生
+	 * @exception InvalidOperationException 改组不存在组长
 	 */
 	 void resignLeaderById(BigInteger groupId,BigInteger userId) throws
-			IllegalArgumentException,GroupNotFoundException;
+			IllegalArgumentException,GroupNotFoundException,UserNotFoundException,InvalidOperationException;
 
 }
