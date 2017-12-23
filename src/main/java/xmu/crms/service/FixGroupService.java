@@ -22,7 +22,7 @@ public interface FixGroupService {
 
     /**
      * 按班级Id添加固定分组.
-     * 
+     * <p>按ClassId和UserId添加带有队长的固定分组<br>
      * @param classId 固定分组Id
      * @param userId  队长的Id
      * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
@@ -36,7 +36,6 @@ public interface FixGroupService {
     /**
      * 按FixGroupId删除FixGroupMember.
      * <p>按FixGroupId删除FixGroupMember<br>
-     *
      * @param fixGroupId 固定分组Id
      * @throws IllegalArgumentException  信息不合法，id格式错误
      * @throws FixGroupNotFoundException 未找到小组
@@ -59,21 +58,6 @@ public interface FixGroupService {
     public void deleteFixGroupUserById(BigInteger fixGroupId, BigInteger userId) throws
             IllegalArgumentException, FixGroupNotFoundException, UserNotFoundException;
 
-    /**
-     * 将学生加入固定小组.
-     * ＜p＞将用户加入指定的固定小组<br>
-     *
-     * @param userId  学生的id
-     * @param groupId 要加入固定小组的id
-     * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
-     * @throws IllegalArgumentException  信息不合法，id格式错误
-     * @throws FixGroupNotFoundException 未找到小组
-     * @throws UserNotFoundException     不存在该学生
-     * @throws InvalidOperationException 待添加学生已经在小组里了
-     * @author YeHongjie
-     */
-    public BigInteger insertFixGroupMemberById(BigInteger userId, BigInteger groupId) throws
-            IllegalArgumentException, FixGroupNotFoundException, UserNotFoundException, InvalidOperationException;
 
     /**
      * 查询固定小组成员.
