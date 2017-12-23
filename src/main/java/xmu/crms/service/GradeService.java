@@ -25,13 +25,13 @@ public interface GradeService {
      * 获取学生某一堂讨论课的小组信息.
      * <p>获取某学生一堂讨论课的小组信息（包括成绩）<br>
      *
-     * @param seminarId 讨论课小组id
+     * @param seminarGroupId 讨论课小组id
      * @return seminarGroup 讨论课小组信息（包括成绩）
      * @throws xmu.crms.exception.GroupNotFoundException 无此小组
      * @throws IllegalArgumentException                  userId或seminarGrouopId格式错误
      * @author qinlingyun
      */
-    SeminarGroup getSeminarGroupBySeminarId(BigInteger seminarId)
+    SeminarGroup getSeminarGroupBySeminarGroupId(BigInteger seminarGroupId)
             throws GroupNotFoundException, IllegalArgumentException;
 
     /**
@@ -42,9 +42,10 @@ public interface GradeService {
      * @throws IllegalArgumentException userId格式错误
      * @author qinlingyun
      * @see SeminarGroupService#listSeminarGroupIdByStudentId(BigInteger)
-     * @see GradeService#getSeminarGroupBySeminarGroupId(BigInteger, BigInteger)
+     * @see GradeService#getSeminarGroupBySeminarGroupId(BigInteger)
      */
     List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
+
 
     /**
      * 按课程id获取学生该课程所有讨论课
