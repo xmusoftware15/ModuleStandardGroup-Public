@@ -46,7 +46,8 @@ namespace Xmu.Crms.Shared.Service
         /// @author yexiaona
         /// </summary>
         /// <param name="classId">班级ID</param>
-        void UpdateClassByClassId(long classId);
+        /// <param name="newclass">修改后班级信息</param>
+        void UpdateClassByClassId(long classId, ClassInfo newclass);
 
         /// <summary>
         /// 按班级id删除班级.

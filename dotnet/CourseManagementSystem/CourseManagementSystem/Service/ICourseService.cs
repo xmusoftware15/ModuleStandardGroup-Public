@@ -96,10 +96,10 @@ namespace Xmu.Crms.Shared.Service
 
 
         /// <summary>
-        /// 根据教师ID获取班级列表.
+        /// 根据学生ID获取班级列表.
         /// @author YeXiaona
         /// </summary>
-        /// <param name="userId">教师ID</param>
+        /// <param name="userId">学生ID</param>
         /// <returns>list 班级列表</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.ListClassByCourseId(System.Int64)"/>
