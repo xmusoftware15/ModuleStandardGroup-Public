@@ -27,8 +27,9 @@ public interface TimerService {
 	 * 更新Event表.
 	 * @author qinlingyun
 	 * @param eventId 事件的ID
+	 * @param newTime 需要修改的时间
 	 */	 
-	 void updateEvent(BigInteger eventId);
+	 void updateEvent(BigInteger eventId, Date newTime);
 
 	 
 	/**
