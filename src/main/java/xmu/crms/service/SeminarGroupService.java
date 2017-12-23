@@ -128,7 +128,7 @@ public interface SeminarGroupService {
 	 * @return BigInteger 若创建成功返回该小组成员表的id，失败则返回-1
 	 */
 	 BigInteger insertSeminarGroupMemberByGroupId(BigInteger seminarGroupId,
-														SeminarGroupMgroupIdember seminarGroupMember);
+														SeminarGroupMember seminarGroupMember);
 
 
 	/**
@@ -138,9 +138,10 @@ public interface SeminarGroupService {
 	 * @param seminarGroupId 讨论课小组的id
 	 * @see SeminarGroupService #deleteSeminarGroupMemberBySeminarGroupId(BigInteger seminarGroupId)
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
+	 * @exception GroupNotFoundException 小组没找到
 	 */
 	 void deleteSeminarGroupByGroupId(BigInteger seminarGroupId) throws
-			IllegalArgumentException;
+			IllegalArgumentException,GroupNotFoundException;
 
 
 	/**
@@ -153,7 +154,7 @@ public interface SeminarGroupService {
 	 * @exception IllegalArgumentException (信息不合法，id格式错误)
 	 * @exception GroupNotFoundException (未找到小组)
 	 */
-	 seminarGroup getSeminarGroupByGroupId(BigInteger seminarGroupId) throws
+	 SeminarGroup getSeminarGroupByGroupId(BigInteger seminarGroupId) throws
 			IllegalArgumentException,GroupNotFoundException;
 
 	/**
