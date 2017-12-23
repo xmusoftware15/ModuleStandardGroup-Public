@@ -32,11 +32,9 @@ namespace Xmu.Crms.Shared.Service
         /// <summary>
         /// 删除topic.
         /// </summary>
-        /// <param name="topicId">要删除的topic的topicId</param>
-        /// <param name="seminarId">要删除topic所属seminar的id</param>
-        
+        /// <param name="topicId">要删除的topic的topicId</param>       
         /// <exception cref="T:System.ArgumentException">Id格式错误时抛出</exception>
-        void DeleteTopicByTopicId(long topicId, long seminarId);
+        void DeleteTopicByTopicId(long topicId);
 
         /// <summary>
         /// 按seminarId获取Topic.
