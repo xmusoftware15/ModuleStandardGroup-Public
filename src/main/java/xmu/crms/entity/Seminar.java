@@ -67,4 +67,17 @@ public class Seminar {
 	public void setEndTime(Date endTime) {
 		this.endTime = endTime;
 	}
+
+	@Override
+	public String toString() {
+		return "Seminar{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", description='" + description + '\'' +
+				", course=" + course +
+				", fixed=" + fixed +
+				", startTime=" + startTime +
+				", endTime=" + endTime +
+				'}';
+	}
 }

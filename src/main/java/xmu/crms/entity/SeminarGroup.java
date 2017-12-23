@@ -75,4 +75,18 @@ public class SeminarGroup {
 	public void setLeader(User leader) {
 		this.leader = leader;
 	}
+
+	@Override
+	public String toString() {
+		return "SeminarGroup{" +
+				"id=" + id +
+				", seminar=" + seminar +
+				", classInfo=" + classInfo +
+				", report='" + report + '\'' +
+				", reportGrade=" + reportGrade +
+				", presentationGrade=" + presentationGrade +
+				", finalGrade=" + finalGrade +
+				", leader=" + leader +
+				'}';
+	}
 }
