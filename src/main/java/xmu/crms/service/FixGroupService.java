@@ -145,7 +145,6 @@ public interface FixGroupService {
      *
      * @param userId  学生的id
      * @param groupId 要加入小组的id
-     * @param classId 要加入小组所属于的班级的id
      * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
      * @throws IllegalArgumentException  信息不合法，id格式错误
      * @throws FixGroupNotFoundException 未找到小组
