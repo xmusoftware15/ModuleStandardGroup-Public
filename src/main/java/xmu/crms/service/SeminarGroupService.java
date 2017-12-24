@@ -200,7 +200,6 @@ public interface SeminarGroupService {
 	 * @author qinlingyun
 	 * @param seminarId 讨论课的id
 	 * @param seminarGroupId 小组的id
-	 * @see SeminarGroupService #getSeminarGroupNotHaveTopic(BigInteger seminarId)
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
 	 * @exception SeminarNotFoundException 未找到讨论课
 	 * @exception GroupNotFoundException 未找到小组
