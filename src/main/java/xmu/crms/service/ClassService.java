@@ -3,8 +3,14 @@ package xmu.crms.service;
 import java.math.BigInteger;
 import java.util.List;
 
-import xmu.crms.entity.*;
-import xmu.crms.exception.*;
+import xmu.crms.entity.ClassInfo;
+import xmu.crms.entity.Location;
+import xmu.crms.entity.User;
+import xmu.crms.exception.ClassesNotFoundException;
+import xmu.crms.exception.CourseNotFoundException;
+import xmu.crms.exception.InvalidOperationException;
+import xmu.crms.exception.SeminarNotFoundException;
+import xmu.crms.exception.UserNotFoundException;
 
 /**
  * @author aixing
@@ -54,11 +60,11 @@ public interface ClassService {
      *
      * @param classId 班级ID
      * @return ClassBO 班级
-     * @throws ClassNotFoundException 无此班级Id
+     * @throws ClassesNotFoundException 无此班级Id
      * @author yexiaona
      */
     ClassInfo getClassByClassId(BigInteger classId)
-            throws ClassNotFoundException;
+            throws ClassesNotFoundException;
 
     /**
      * 按班级id和班级修改班级信息.
@@ -67,11 +73,11 @@ public interface ClassService {
      *
      * @param classId  班级ID
      * @param newClass 修改后的班级
-     * @throws ClassNotFoundException 无此班级Id
+     * @throws ClassesNotFoundException 无此班级Id
      * @author yexiaona
      */
     void updateClassByClassId(BigInteger classId, ClassInfo newClass)
-            throws ClassNotFoundException;
+            throws ClassesNotFoundException;
 
     /**
      * 按班级id删除班级.
@@ -79,14 +85,14 @@ public interface ClassService {
      * 根据班级id删除班级<br>
      *
      * @param classId 班级ID
-     * @throws ClassNotFoundException 无此班级Id
+     * @throws ClassesNotFoundException 无此班级Id
      * @author yexiaona
      * @see ClassService #deleteCourseSelectionById(BigInteger classId,User user)
      * @see FixGroupService #deleteFixGroupByClassId(BigInteger classId)
      * @see SeminarGroupService #deleteSeminarGroupByClaaId(BigInteger classId)
      */
     void deleteClassByClassId(BigInteger classId)
-            throws ClassNotFoundException;
+            throws ClassesNotFoundException;
 
     /**
      * 学生按班级id选择班级.
@@ -97,11 +103,11 @@ public interface ClassService {
      * @param classId 班级id
      * @return courseSelectionId 选课记录id
      * @throws UserNotFoundException  无此姓名的教师
-     * @throws ClassNotFoundException 无此Id的班级
+     * @throws ClassesNotFoundException 无此Id的班级
      * @author yexiaona
      */
     BigInteger insertCourseSelectionById(BigInteger userId, BigInteger classId) throws
-            UserNotFoundException, ClassNotFoundException;
+            UserNotFoundException, ClassesNotFoundException;
 
     /**
      * 学生按班级id取消选择班级.
@@ -111,11 +117,11 @@ public interface ClassService {
      * @param userId  用户id
      * @param classId 班级id
      * @throws UserNotFoundException  无此姓名的教师
-     * @throws ClassNotFoundException 无此Id的班级
+     * @throws ClassesNotFoundException 无此Id的班级
      * @author yexiaona
      */
     void deleteCourseSelectionById(BigInteger userId, BigInteger classId) throws
-            UserNotFoundException, ClassNotFoundException;
+            UserNotFoundException, ClassesNotFoundException;
 
     /**
      * 老师获取该班级签到状态.
@@ -164,10 +170,10 @@ public interface ClassService {
      * 按classId删除ScoreRule.
      *
      * @param classId 班级Id
-     * @throws ClassNotFoundException 无此Id的班级
+     * @throws ClassesNotFoundException 无此Id的班级
      * @author zhouzhongjun
      */
-    void deleteScoreRuleById(BigInteger classId) throws ClassNotFoundException;
+    void deleteScoreRuleById(BigInteger classId) throws ClassesNotFoundException;
 
     /**
      * 查询评分规则.
@@ -176,10 +182,10 @@ public interface ClassService {
      *
      * @param classId 班级id
      * @return ProportionBO 返回评分规则，若未找到对应评分规则返回空（null)
-     * @throws ClassNotFoundException 无此Id的班级
+     * @throws ClassesNotFoundException 无此Id的班级
      * @author YeHongjie
      */
-    ClassInfo getScoreRule(BigInteger classId) throws ClassNotFoundException;
+    ClassInfo getScoreRule(BigInteger classId) throws ClassesNotFoundException;
 
     /**
      * 新增评分规则.
@@ -190,11 +196,11 @@ public interface ClassService {
      * @param proportions 评分规则
      * @return scoreRuleId 若创建成功则返回该评分规则的id，失败则返回-1
      * @throws InvalidOperationException 班级信息不合法
-     * @throws ClassNotFoundException    无此Id的班级
+     * @throws ClassesNotFoundException    无此Id的班级
      * @author YeHongjie
      */
     BigInteger insertScoreRule(BigInteger classId, ClassInfo proportions)
-            throws InvalidOperationException, ClassNotFoundException;
+            throws InvalidOperationException, ClassesNotFoundException;
 
     /**
      * 修改评分规则.
@@ -204,24 +210,38 @@ public interface ClassService {
      * @param classId     班级id
      * @param proportions 评分规则
      * @throws InvalidOperationException 班级信息不合法
-     * @throws ClassNotFoundException    无此Id的班级
+     * @throws ClassesNotFoundException    无此Id的班级
      * @author YeHongjie
      */
     void updateScoreRule(BigInteger classId, ClassInfo proportions)
-            throws InvalidOperationException, ClassNotFoundException;
+            throws InvalidOperationException, ClassesNotFoundException;
 
     /**
      * 老师发起签到.
      * <p>往location表插入一条当前讨论课班级的签到状态<br>
-     *
+     * 
      * @param location 当前讨论课班级的签到状态记录
      * @return 返回location表的新记录的id
      * @throws SeminarNotFoundException 讨论课没有找到
-     * @throws ClassNotFoundException   无此Id的班级
+     * @throws ClassesNotFoundException   无此Id的班级
      */
-    BigInteger CallInRollById(Location location)
-            throws SeminarNotFoundException, ClassNotFoundException;
+    BigInteger callInRollById(Location location)
+            throws SeminarNotFoundException, ClassesNotFoundException;
 
+    /**
+     * 新增老师结束签到.
+     * <p>老师结束签到,修改当前讨论课班级的签到状态为已结束<br>
+     * 
+     * @author qinlingyun
+     * @param location 当前讨论课班级的签到状态记录
+     * @throws SeminarNotFoundException 讨论课没有找到
+     * @throws ClassesNotFoundException   无此Id的班级
+     */
+    void endCallRollById(Location location)
+            throws SeminarNotFoundException, ClassesNotFoundException;
+    
+    
+    
     /**
      * 根据学生ID获取班级列表.
      * <p>根据学生ID获取班级列表<br>

@@ -34,6 +34,12 @@ public interface GradeService {
     SeminarGroup getSeminarGroupBySeminarGroupId(BigInteger seminarGroupId)
             throws GroupNotFoundException, IllegalArgumentException;
 
+    
+    /**
+     * 删除!.
+     * semimarGroupService 中已存在该方法。
+     * 获取某学生所有的讨论课小组. List<SeminarGroup> listSeminarGroupIdByStudentId(BigInteger userId)
+     */
     /**
      * 获取某学生所有讨论课的所有成绩
      * <p>获取某学生所有讨论课的详细信息（包括成绩）<br>
@@ -41,10 +47,10 @@ public interface GradeService {
      * @return list 学生历史讨论课小组列表（包含成绩）
      * @throws IllegalArgumentException userId格式错误
      * @author qinlingyun
-     * @see SeminarGroupService#listSeminarGroupIdByStudentId(BigInteger)
+     * @see SeminarGroupService#listSeminarGroupIdByStudent(BigInteger) 
      * @see GradeService#getSeminarGroupBySeminarGroupId(BigInteger)
      */
-    List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
+    //List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
 
 
     /**
@@ -87,29 +93,30 @@ public interface GradeService {
             throws GroupNotFoundException, IllegalArgumentException;
 
     /**
-     * 定时器方法.
+     * 仅作为普通方法，被下面的定时器方法调用.
      * 讨论课结束后计算展示得分.
-     * <p>条件: 讨论课已结束<br>*GradeService<br>
+     * <p>条件: 讨论课已结束<br>
      *
      * @param seminarId      讨论课ID
      * @param seminarGroupId 小组ID
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
      */
-    void countPresentationGrade(BigInteger seminarId, BigInteger seminarGroupId) throws IllegalArgumentException;
+    void countPresentationGrade(BigInteger seminarId) throws IllegalArgumentException;
 
 
     /**
      * 定时器方法.
-     * 讨论课结束后计算本次讨论课得分.
-     * <p>条件: 讨论课已结束，展示得分已算出<br>*GradeService<br>
+     * 讨论课结束后本次讨论课最终得分.
+     * <p>条件: 讨论课已结束，先计算展示得分<br>
      *
      * @param seminarId      讨论课ID
      * @param seminarGroupId 小组ID
+     * @see GradeService #countPresentationGrade(BigInteger seminarId)
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
      */
-    void countGroupGradeBySerminarId(BigInteger seminarId, BigInteger seminarGroupId) throws IllegalArgumentException;
+    void countGroupGradeBySerminarId(BigInteger seminarId) throws IllegalArgumentException;
 
 
 }

@@ -21,12 +21,11 @@ namespace Xmu.Crms.Shared.Service
         ///@author qinlingyun
         ///获取某学生一堂讨论课的详细信息（包括成绩）
         /// </summary>
-        /// <param name="userId">学生Id</param>
         /// <param name="seminarGroupId">讨论课小组Id</param>
         /// <returns>seminarGroup 讨论课小组信息（包括成绩）</returns>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.GroupNotFoundException">未找到小组</exception>
-        SeminarGroup GetSeminarGroupBySeminarGroupId(long userId, long seminarGroupId);
+        SeminarGroup GetSeminarGroupBySeminarGroupId(long seminarGroupId);
 
         /// <summary>
         /// 按课程id获取学生该课程所有讨论课
@@ -69,14 +68,14 @@ namespace Xmu.Crms.Shared.Service
         IList<SeminarGroup> ListSeminarGradeByStudentId(long userId);
 
         /// <summary>
-        /// 定时器方法:讨论课结束后计算展示得分.
+        /// 仅作为普通方法，被下面的定时器方法调用.
+        /// 讨论课结束后计算展示得分.
         /// @author qinlingyun
         /// 条件: 讨论课已结束  *GradeService
         /// </summary>
         /// <param name="seminarId">讨论课id</param>
-        /// <param name="seminarGroupId">讨论课组id</param>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        void CountPresentationGrade(long seminarId, long seminarGroupId);
+        void CountPresentationGrade(long seminarId);
 
         /// <summary>
         /// 定时器方法:讨论课结束后计算本次讨论课得分.
@@ -84,8 +83,7 @@ namespace Xmu.Crms.Shared.Service
         /// 条件: 讨论课已结束，展示得分已算出  *GradeService
         /// </summary>
         /// <param name="seminarId">讨论课id</param>
-        /// <param name="seminarGroupId">讨论课组id</param>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        void CountGroupGradeBySerminarId(long seminarId, long seminarGroupId);
+        void CountGroupGradeBySerminarId(long seminarId);
     }
 }

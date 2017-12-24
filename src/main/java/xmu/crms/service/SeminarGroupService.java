@@ -174,9 +174,8 @@ public interface SeminarGroupService {
 
 
 	/**
-	 *
 	 * 自动分组.
-	 * <p>根据讨论课id和班级id，对签到的学生进行自动分组<br>
+	 * <p>根据讨论课id和班级id，结束签到后 对签到的学生进行自动分组<br>
 	 * @author YeHongjie
 	 * @param seminarId 讨论课的id
 	 * @param classId 班级的id
@@ -192,6 +191,23 @@ public interface SeminarGroupService {
 			IllegalArgumentException,ClassesNotFoundException,SeminarNotFoundException,
 			GroupNotFoundException,UserNotFoundException,InvalidOperationException;
 
+		
+	
+	/**
+	 * 新增定时器方法.
+	 * <p>随机分组情况下，签到结束后十分钟给没有选择话题的小组分配话题<br>
+	 * @author qinlingyun
+	 * @param seminarId 讨论课的id
+	 * @param seminarGroupId 小组的id
+	 * @see SeminarGroupService #getSeminarGroupNotHaveTopic(BigInteger seminarId)
+	 * @exception IllegalArgumentException 信息不合法，id格式错误
+	 * @exception SeminarNotFoundException 未找到讨论课
+	 * @exception GroupNotFoundException 未找到小组
+	 */
+	void automaticallyAllotTopic(BigInteger seminarId) throws
+			IllegalArgumentException, SeminarNotFoundException, GroupNotFoundException;
+	
+	
 
 	/**
 	 * 根据讨论课Id及用户id，获得该用户所在的讨论课的小组的信息.

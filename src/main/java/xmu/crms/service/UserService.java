@@ -178,5 +178,6 @@ public interface UserService {
 	 * @exception CourseNotFoundException throws when 对应姓名的用户未创设任何课程 
 	 */
 	List<Course> listCourseByTeacherName(String teacherName) throws
-			UserNotFoundException,IllegalArgumentException,CourseNotFoundException;
+			UserNotFoundException,IllegalArgumentException,CourseNotFoundException;	
+
 }
