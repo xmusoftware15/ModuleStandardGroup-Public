@@ -149,14 +149,13 @@ public interface FixGroupService {
      * @return BigInteger 若创建成功返回该条记录的id，失败则返回-1
      * @throws IllegalArgumentException  信息不合法，id格式错误
      * @throws FixGroupNotFoundException 未找到小组
-     * @throws ClassesNotFoundException 未找到班级
      * @throws UserNotFoundException     不存在该学生
      * @throws InvalidOperationException 待添加学生已经在小组里了
      * @author YeHongjie
      */
 
-    public BigInteger insertStudentIntoGroup(BigInteger userId, BigInteger classId, BigInteger groupId) throws
-            IllegalArgumentException, FixGroupNotFoundException, UserNotFoundException,ClassesNotFoundException,
+    public BigInteger insertStudentIntoGroup(BigInteger userId, BigInteger groupId) throws
+            IllegalArgumentException, FixGroupNotFoundException, UserNotFoundException,
             InvalidOperationException;
 
     /**
