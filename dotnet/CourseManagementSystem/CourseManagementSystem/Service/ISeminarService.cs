@@ -33,18 +33,6 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.CourseNotFoundException">该课程不存在时抛出</exception>
         void DeleteSeminarByCourseId(long courseId);
 
-        /// <summary>
-        /// 获得学生相关的某个讨论课的信息.
-        /// @author CaoXingmei
-        /// 通过学生用户id和讨论课id获得学生某个讨论课的详细信息(包括讨论课信息，教师信息).
-        /// </summary>
-        /// <param name="seminarId">讨论课的id</param>
-        /// <param name="userId">学生的id</param>
-        /// <returns>相应的讨论课的详细信息</returns>
-        /// <exception cref="T:System.ArgumentException">格式错误时抛出</exception>
-        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.CourseNotFoundException">该课程不存在时抛出</exception>
-        Seminar GetSeminarDetailBySeminarId(long seminarId, long userId);
-
 
         /// <summary>
         /// 用户通过讨论课id获得讨论课的信息.
