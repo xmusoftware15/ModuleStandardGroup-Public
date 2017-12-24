@@ -113,5 +113,15 @@ public interface CourseService {
      */
     List<ClassInfo> listClassByTeacherName(String teacherName) throws UserNotFoundException,ClassesNotFoundException;
 
+      /**
+	  * 根据课程ID获得选课人数.
+	  * <p>根据课程ID获得选课人数<br>
+	  * @param courseId 班级Id
+	  * @return 选择此课的学生列表
+	  * @see ClassService #listClassByCourseId(BigInteger courseId)
+	  * @exception CourseNotFoundException 未找到该班级
+	  */
+	 BigInteger listStudentByCourseId(BigInteger courseId) throws CourseNotFoundException;
+
 }
 
