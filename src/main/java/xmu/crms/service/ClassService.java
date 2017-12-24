@@ -3,8 +3,14 @@ package xmu.crms.service;
 import java.math.BigInteger;
 import java.util.List;
 
-import xmu.crms.entity.*;
-import xmu.crms.exception.*;
+import xmu.crms.entity.ClassInfo;
+import xmu.crms.entity.Location;
+import xmu.crms.entity.User;
+import xmu.crms.exception.ClassesNotFoundException;
+import xmu.crms.exception.CourseNotFoundException;
+import xmu.crms.exception.InvalidOperationException;
+import xmu.crms.exception.SeminarNotFoundException;
+import xmu.crms.exception.UserNotFoundException;
 
 /**
  * @author aixing
@@ -213,15 +219,29 @@ public interface ClassService {
     /**
      * 老师发起签到.
      * <p>往location表插入一条当前讨论课班级的签到状态<br>
-     *
+     * 
      * @param location 当前讨论课班级的签到状态记录
      * @return 返回location表的新记录的id
      * @throws SeminarNotFoundException 讨论课没有找到
      * @throws ClassesNotFoundException   无此Id的班级
      */
-    BigInteger CallInRollById(Location location)
+    BigInteger callInRollById(Location location)
             throws SeminarNotFoundException, ClassesNotFoundException;
 
+    /**
+     * 新增老师结束签到.
+     * <p>老师结束签到,修改当前讨论课班级的签到状态为已结束<br>
+     * 
+     * @author qinlingyun
+     * @param location 当前讨论课班级的签到状态记录
+     * @throws SeminarNotFoundException 讨论课没有找到
+     * @throws ClassesNotFoundException   无此Id的班级
+     */
+    void endCallRollById(Location location)
+            throws SeminarNotFoundException, ClassesNotFoundException;
+    
+    
+    
     /**
      * 根据学生ID获取班级列表.
      * <p>根据学生ID获取班级列表<br>

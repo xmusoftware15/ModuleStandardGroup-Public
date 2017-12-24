@@ -34,6 +34,12 @@ public interface GradeService {
     SeminarGroup getSeminarGroupBySeminarGroupId(BigInteger seminarGroupId)
             throws GroupNotFoundException, IllegalArgumentException;
 
+    
+    /**
+     * 删除!.
+     * semimarGroupService 中已存在该方法。
+     * 获取某学生所有的讨论课小组. List<SeminarGroup> listSeminarGroupIdByStudentId(BigInteger userId)
+     */
     /**
      * 获取某学生所有讨论课的所有成绩
      * <p>获取某学生所有讨论课的详细信息（包括成绩）<br>
@@ -44,7 +50,7 @@ public interface GradeService {
      * @see SeminarGroupService#listSeminarGroupIdByStudent(BigInteger) 
      * @see GradeService#getSeminarGroupBySeminarGroupId(BigInteger)
      */
-    List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
+    //List<SeminarGroup> listSeminarGradeByUserId(BigInteger userId) throws IllegalArgumentException;
 
 
     /**
