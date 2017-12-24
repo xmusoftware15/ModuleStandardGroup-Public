@@ -98,7 +98,6 @@ public interface GradeService {
      * <p>条件: 讨论课已结束<br>
      *
      * @param seminarId      讨论课ID
-     * @param seminarGroupId 小组ID
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
      */
@@ -111,7 +110,6 @@ public interface GradeService {
      * <p>条件: 讨论课已结束，先计算展示得分<br>
      *
      * @param seminarId      讨论课ID
-     * @param seminarGroupId 小组ID
      * @see GradeService #countPresentationGrade(BigInteger seminarId)
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
