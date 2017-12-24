@@ -65,8 +65,8 @@ namespace Xmu.Crms.Shared.Service
         /// </summary>
         /// <param name="userId">用户id</param>
         /// <param name="classId">班级id</param>
-        /// <returns>url 选课url</returns>
-        string InsertCourseSelectionById(long userId, long classId);
+        /// <returns>courseSelectionId 选课记录id</returns>
+        long InsertCourseSelectionById(long userId, long classId);
 
         /// <summary>
         /// 学生按班级id取消选择班级.
@@ -91,11 +91,10 @@ namespace Xmu.Crms.Shared.Service
         /// 新建班级.
         /// @author yexiaona
         /// </summary>
-        /// <param name="userId">教师id</param>
         /// <param name="courseId">课程id</param>
         /// <param name="classInfo">班级信息</param>
         /// <returns>classId 班级Id</returns>
-        long InsertClassById(long userId, long courseId,ClassInfo classInfo);
+        long InsertClassById(long courseId,ClassInfo classInfo);
 
         /// <summary>
         /// 按courseId删除Class.
@@ -139,5 +138,38 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="classId">班级id</param>
         /// <param name="proportions">评分规则</param>
         void UpdateScoreRule(long classId, ClassInfo proportions);
+
+
+        ///<summary>
+        ///老师发起签到.
+        ///往location表插入一条当前讨论课班级的签到状态
+        /// </summary>
+        /// <param name="location">当前讨论课班级的签到状态记录 </param>
+        /// <returns> 返回location表的新记录的id</returns>
+        ///   <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">讨论课没有找到</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassesNotFoundException">无此Id的班级</exception>
+        long CallInRollById(Location location);
+
+        /// <summary>
+        /// 新增老师结束签到
+        /// @author qinlingyun
+        /// 老师结束签到,修改当前讨论课班级的签到状态为已结束
+        /// </summary>
+        /// <param name="location">当前讨论课班级的签到状态记录</param>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">讨论课没有找到</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassesNotFoundException">无此Id的班级</exception>
+        void EndCallRollById(Location location);
+
+        ///<summary>
+        ///根据学生ID获取班级列表.
+        /// @author YeXiaona
+        ///
+        /// </summary>
+        /// <param name="userId">学生ID</param>
+        /// <returns>list 班级列表</returns>
+        /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
+        ///  <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassesNotFoundException">无此班级</exception>
+        List<ClassInfo> ListClassByUserId(long userId);
+
     }
 }
