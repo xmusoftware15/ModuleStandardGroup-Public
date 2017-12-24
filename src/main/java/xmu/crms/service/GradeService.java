@@ -28,7 +28,7 @@ public interface GradeService {
      * @param seminarGroupId 讨论课小组id
      * @return seminarGroup 讨论课小组信息（包括成绩）
      * @throws xmu.crms.exception.GroupNotFoundException 无此小组
-     * @throws IllegalArgumentException                  userId或seminarGrouopId格式错误
+     * @throws IllegalArgumentException  seminarGrouopId格式错误
      * @author qinlingyun
      */
     SeminarGroup getSeminarGroupBySeminarGroupId(BigInteger seminarGroupId)
