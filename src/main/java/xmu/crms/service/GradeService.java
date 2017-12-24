@@ -114,7 +114,7 @@ public interface GradeService {
      * @throws IllegalArgumentException seminarId或seminarGroupId格式错误
      * @author qinlingyun
      */
-    void countGroupGradeBySerminarId(BigInteger seminarId) throws IllegalArgumentException;
+    void countGroupGradeBySeminarId(BigInteger seminarId) throws IllegalArgumentException;
 
 
 }
