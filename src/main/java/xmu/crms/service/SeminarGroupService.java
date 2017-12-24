@@ -174,9 +174,8 @@ public interface SeminarGroupService {
 
 
 	/**
-	 * 新增定时器方法.
-	 * <p>本次讨论课班级的状态为签到结束后 则进行自动分组和自动分配选题<br>
-	 * <p>根据讨论课id和班级id，对签到的学生进行自动分组<br>
+	 * 自动分组.
+	 * <p>根据讨论课id和班级id，结束签到后 对签到的学生进行自动分组<br>
 	 * @author YeHongjie
 	 * @param seminarId 讨论课的id
 	 * @param classId 班级的id
@@ -196,7 +195,7 @@ public interface SeminarGroupService {
 	
 	/**
 	 * 新增定时器方法.
-	 * <p>签到结束后十分钟给没有选择话题的小组分配话题<br>
+	 * <p>随机分组情况下，签到结束后十分钟给没有选择话题的小组分配话题<br>
 	 * @author qinlingyun
 	 * @param seminarId 讨论课的id
 	 * @param seminarGroupId 小组的id

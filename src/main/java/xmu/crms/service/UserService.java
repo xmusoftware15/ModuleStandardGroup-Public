@@ -178,20 +178,6 @@ public interface UserService {
 	 * @exception CourseNotFoundException throws when 对应姓名的用户未创设任何课程 
 	 */
 	List<Course> listCourseByTeacherName(String teacherName) throws
-			UserNotFoundException,IllegalArgumentException,CourseNotFoundException;
-
-
-   /**
-	* 定时器方法.
-	* 课堂结束后设置缺勤的名单,即插入本次讨论课班级未签到学生的记录.
-	* <p>点名结束后是迟到，此时学生仍可以签到，课程结束后则是缺勤<br>
-	* <p>条件: 课堂结束后<br> 
-	* @author qinlingyun 
-	* @param classId 班级ID
-	* @param seminarId 讨论课ID
-	* @see UserService#listUserByClassId(BigInteger classId,String numBeginWith,String nameBeginWith)
-	* @see UserService#listAttendanceById(BigInteger classId, BigInteger seminarId)
-	*/ 
-	List<BigInteger> insertAbsentListByClassId(BigInteger classId, BigInteger seminarId); 		
+			UserNotFoundException,IllegalArgumentException,CourseNotFoundException;	
 
 }
