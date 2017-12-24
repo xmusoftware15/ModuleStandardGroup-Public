@@ -10,6 +10,16 @@ namespace Xmu.Crms.Shared.Service
     public interface ICourseService
     {
         /// <summary>
+        /// 新建班级.
+        /// @author yexiaona
+        /// </summary>
+        /// <param name="courseId">课程id</param>
+        /// <param name="classInfo">班级信息</param>
+        /// <returns>classId 班级Id</returns>
+        long InsertClassById(long courseId, ClassInfo classInfo);
+
+
+        /// <summary>
         /// 按userId获取与当前用户相关联的课程列表.
         /// @author ZhouZhongjun
         /// </summary>
@@ -104,6 +114,6 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.ListClassByCourseId(System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
-        IList<ClassInfo> ListClassByUserId(long userId);
+        IList<ClassInfo> ListClassByName(string courseName,string teacherName);
     }
 }

@@ -64,7 +64,7 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="groupId">小组Id</param>
         /// <param name="topicId">话题Id</param>
         /// <exception cref="T:System.ArgumentException">groupId格式错误或topicId格式错误时抛出</exception>
-        void DeleteTopicById(long groupId, long topicId);
+        void DeleteSeminarGroupTopicById(long groupId, long topicId);
 
         /// <summary>
         /// 按topicId删除SeminarGroupTopic表信息.
@@ -82,6 +82,16 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>seminarGroupTopic 讨论课小组选题信息</returns>
         ///  <exception cref="T:System.ArgumentException">seminarId格式错误</exception>
         SeminarGroupTopic GetSeminarGroupTopicById(long topicId, long groupId);
+
+
+
+        /// 根据小组id获取该小组该堂讨论课所有选题信息
+        /// <p>根据小组id获取该小组该堂讨论课所有选题信息<br>
+        /// @param groupId
+        /// @return list 该小组该堂讨论课选题列表
+        /// @exception IllegalArgumentException groupId格式错误
+        List<SeminarGroupTopic> ListSeminarGroupTopicByGroupId(long groupId);
+
 
         /// <summary>
         /// 按seminarId删除话题.

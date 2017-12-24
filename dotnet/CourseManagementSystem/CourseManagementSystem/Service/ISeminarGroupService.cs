@@ -88,7 +88,7 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>long 返回该小组的id</returns>
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.InsertSeminarGroupMemberById(System.Int64,System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
-        long InsertSeminarGroupBySeminarId(long seminarId, SeminarGroup seminarGroup);
+        long InsertSeminarGroupBySeminarId(long seminarId, long classId,SeminarGroup seminarGroup);
 
         /// <summary>
         /// 创建小组成员信息.
@@ -145,7 +145,20 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到讨论课</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.ClassNotFoundException">未找到班级</exception>
-        bool AutomaticallyGrouping(long seminarId, long classId);
+        void AutomaticallyGrouping(long seminarId, long classId);
+
+
+
+        ///新增定时器方法.
+        ///<p>随机分组情况下，签到结束后十分钟给没有选择话题的小组分配话题<br>
+        ///@author qinlingyun
+        /// @param seminarId 讨论课的id
+        /// @param seminarGroupId 小组的id
+        /// @exception IllegalArgumentException 信息不合法，id格式错误
+        /// @exception SeminarNotFoundException 未找到讨论课
+        ///@exception GroupNotFoundException 未找到小组
+        void AutomaticallyAllotTopic(long seminarId);
+
 
         /// <summary>
         /// 根据讨论课Id及用户id，获得该用户所在的讨论课的小组的信息.

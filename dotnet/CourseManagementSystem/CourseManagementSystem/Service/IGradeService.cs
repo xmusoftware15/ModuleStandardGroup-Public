@@ -59,13 +59,13 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="grade">分数</param>
         void UpdateGroupByGroupId(long seminarGroupId, int grade);
 
-        /// <summary>
-        /// 获取某学生的讨论课成绩列表.
-        /// @author qinlingyun
-        /// </summary>
-        /// <param name="userId">用户id</param>
-        /// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupBySeminarId(System.Int64)"/>
-        IList<SeminarGroup> ListSeminarGradeByStudentId(long userId);
+        ///// <summary>
+        ///// 获取某学生的讨论课成绩列表.
+        ///// @author qinlingyun
+        ///// </summary>
+        ///// <param name="userId">用户id</param>
+        ///// <seealso cref="M:Xmu.Crms.Shared.Service.ISeminarGroupService.ListSeminarGroupBySeminarId(System.Int64)"/>
+        //IList<SeminarGroup> ListSeminarGradeByStudentId(long userId);
 
         /// <summary>
         /// 仅作为普通方法，被下面的定时器方法调用.

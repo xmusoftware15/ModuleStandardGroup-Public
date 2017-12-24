@@ -26,6 +26,7 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
         void DeleteFixGroupMemberByFixGroupId(long fixGroupId);
 
+
         /// <summary>
         /// 查询固定小组成员.
         /// @author YeHongjie
@@ -77,6 +78,8 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:System.ArgumentException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.FixGroupNotFoundException">未找到小组</exception>
         void UpdateFixGroupByGroupId(long groupId, FixGroup fixGroupBo);
+
+
 
         ///<summary>
         ///将学生加入小组
