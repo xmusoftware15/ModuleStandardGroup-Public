@@ -149,56 +149,7 @@ public interface ClassService {
     void deleteClassByCourseId(BigInteger courseId) throws
             CourseNotFoundException;
 
-    /**
-     * 按classId删除ScoreRule.
-     *
-     * @param classId 班级Id
-     * @throws ClassesNotFoundException 无此Id的班级
-     * @author zhouzhongjun
-     */
-    void deleteScoreRuleById(BigInteger classId) throws ClassesNotFoundException;
-
-    /**
-     * 查询评分规则.
-     * <p>
-     * 按id查询指定的评分规则<br>
-     *
-     * @param classId 班级id
-     * @return ProportionBO 返回评分规则，若未找到对应评分规则返回空（null)
-     * @throws ClassesNotFoundException 无此Id的班级
-     * @author YeHongjie
-     */
-    ClassInfo getScoreRule(BigInteger classId) throws ClassesNotFoundException;
-
-    /**
-     * 新增评分规则.
-     * <p>
-     * 新增评分规则<br>
-     *
-     * @param classId     班级Id
-     * @param proportions 评分规则
-     * @return scoreRuleId 若创建成功则返回该评分规则的id，失败则返回-1
-     * @throws InvalidOperationException 班级信息不合法
-     * @throws ClassesNotFoundException    无此Id的班级
-     * @author YeHongjie
-     */
-    BigInteger insertScoreRule(BigInteger classId, ClassInfo proportions)
-            throws InvalidOperationException, ClassesNotFoundException;
-
-    /**
-     * 修改评分规则.
-     * <p>
-     * 修改指定的评分规则<br>
-     *
-     * @param classId     班级id
-     * @param proportions 评分规则
-     * @throws InvalidOperationException 班级信息不合法
-     * @throws ClassesNotFoundException    无此Id的班级
-     * @author YeHongjie
-     */
-    void updateScoreRule(BigInteger classId, ClassInfo proportions)
-            throws InvalidOperationException, ClassesNotFoundException;
-
+   
     /**
      * 老师发起签到.
      * <p>往location表插入一条当前讨论课班级的签到状态<br>
