@@ -112,6 +112,7 @@ public interface SeminarGroupService {
 	 * <p>在指定讨论课下创建讨论课小组<br>
 	 * @author YeHongjie
 	 * @param seminarId 讨论课的id
+	 * @param classId 班级id
 	 * @param seminarGroup 小组信息
 	 * @see SeminarGroupService #insertSeminarGroupMemberByGroupId(BigInteger groupId,SeminarGroupMember SeminarGroupMember)
 	 * @return BigInteger 若创建成功返回该小组的id，失败则返回-1

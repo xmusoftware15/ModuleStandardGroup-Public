@@ -113,5 +113,21 @@ public interface CourseService {
      */
     List<ClassInfo> listClassByTeacherName(String teacherName) throws UserNotFoundException,ClassesNotFoundException;
 
+    /**
+     * 按课程名称和教师名称获取班级列表.
+     * <p> 根据课程名和教师名获取课程ID，通过课程ID获取班级列表;若课程名和班级名均不为空，取交集<br>
+     *
+     * @param courseName  课程名称
+     * @param teacherName 教师名称
+     * @return List 班级列表
+     * @throws UserNotFoundException   无此姓名的教师
+     * @throws CourseNotFoundException 无此名称的课程
+     * @author yexiaona
+     * @see CourseService #listClassByCourseName(String courseName)
+     * @see CourseService #listClassByTeacherName(String teacherName)
+     */
+    List<ClassInfo> listClassByName(String courseName, String teacherName) throws
+            UserNotFoundException, CourseNotFoundException;
+
 }
 
