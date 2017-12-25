@@ -63,6 +63,19 @@ public interface UserService {
 	 */
 	User getUserByUserId(BigInteger userId) throws IllegalArgumentException,
 			UserNotFoundException;
+	
+	/**
+	 * 根据用户学（工）号获取用户的信息.
+	 * <p>根据用户学（工）号获取用户的信息<br> 
+	 * @author YeHongjie
+	 * @param userNum 用户学（工）号
+	 * @return user 用户信息
+	 * @see SchoolService#getSchoolBySchoolId(BigInteger schoolId)
+	 * @exception IllegalArgumentException throws when 信息不合法 
+	 * @exception UserNotFoundException throws when 未找到对应用户
+	 */
+	User getUserByUserNumber(BigInteger userNumber) throws IllegalArgumentException,
+			UserNotFoundException;
 
 	/**
 	 * 根据用户名获取用户ID.
