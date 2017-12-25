@@ -132,6 +132,19 @@ public interface SeminarGroupService {
                                                  SeminarGroupMember seminarGroupMember);
 
 
+	
+	/**
+	 * 删除小组成员.
+	 * <p>在指定小组成员表下删除一个小组成员信息<br>
+	 * @param seminarGroupId 小组的id
+	 * @param  userId 成员id
+	 */
+	void deleteSeminarGroupMemberByuId(BigInteger seminarGroupId,
+                                                 BigInteger userId);
+
+
+	
+	
 	/**
 	 * 删除讨论课小组.
 	 * <p>按照id删除讨论课小组<br>
