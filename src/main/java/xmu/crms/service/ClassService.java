@@ -2,7 +2,7 @@ package xmu.crms.service;
 
 import java.math.BigInteger;
 import java.util.List;
-
+import java.io.FileNotFoundException;
 import xmu.crms.entity.ClassInfo;
 import xmu.crms.entity.Location;
 import xmu.crms.entity.User;
@@ -189,4 +189,11 @@ public interface ClassService {
      * @see ClassService #getClassByClassId(BigInteger classId)
      */
     List<ClassInfo> listClassByUserId(BigInteger userId) throws IllegalArgumentException, ClassesNotFoundException;
+
+        /**
+     * 将文件中的学生插入数据库.
+     * <p>将文件中的学生插入数据库<br>
+     * @param filePath 文件路径及文件名，如c://1.xsl
+     */
+    public void insertStudentFromRoster(String filePath) throws FileNotFoundException;
 }
