@@ -49,6 +49,17 @@ namespace Xmu.Crms.Shared.Service
         UserInfo GetUserByUserId(long userId);
 
         /// <summary>
+        /// 根据用户学（工）号获取用户的信息.
+        /// @author YeHongjie
+        /// </summary>
+        /// <param name="userNumber">用户学（工）号</param>
+        /// <returns>user 用户信息</returns>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.ISchoolService.GetSchoolBySchoolId(System.Int64)"/>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">id格式错误</exception>
+        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">未找到对应用户</exception>
+        UserInfo GetUserByUserId(string userNumber);
+
+        /// <summary>
         /// 根据用户名获取用户ID.
         /// @author qinlingyun
         /// </summary>
