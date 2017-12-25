@@ -40,7 +40,7 @@ namespace Xmu.Crms.Shared.Service
 
 
         /// <summary>
-        /// 用户解绑.教师解绑账号
+        /// 用户解绑.教师解绑账号(j2ee)
         /// @author qinlingyun
         /// </summary>
         /// <param name="userId">用户id</param>
@@ -53,7 +53,7 @@ namespace Xmu.Crms.Shared.Service
 
 
         /// <summary>
-        /// 用户解绑.学生解绑账号
+        /// 用户解绑.学生解绑账号(j2ee)
         /// @author qinlingyun
         /// </summary>
         /// <param name="userId">用户id</param>
