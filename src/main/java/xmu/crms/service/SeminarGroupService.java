@@ -86,8 +86,7 @@ public interface SeminarGroupService {
 	 * 按seminarId获取SeminarGroup.
 	 * <p>按seminarId获取SeminarGroup<br>
 	 * @author zhouzhongjun
-	 * @param seminarId 课程Id
-	 * @return 讨论课小组列表
+	 * @param seminarId 课程Id	 * @return 讨论课小组列表
 	 * @exception IllegalArgumentException 信息不合法，id格式错误
 	 * @exception SeminarNotFoundException 未找到讨论课
 	 */
@@ -139,7 +138,7 @@ public interface SeminarGroupService {
 	 * @param seminarGroupId 小组的id
 	 * @param  userId 成员id
 	 */
-	void deleteSeminarGroupMemberByuId(BigInteger seminarGroupId,
+	void deleteSeminarGroupMemberById(BigInteger seminarGroupId,
                                                  BigInteger userId);
 
 
