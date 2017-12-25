@@ -74,7 +74,7 @@ public interface UserService {
 	 * @exception IllegalArgumentException throws when 信息不合法 
 	 * @exception UserNotFoundException throws when 未找到对应用户
 	 */
-	User getUserByUserNumber(BigInteger userNumber) throws IllegalArgumentException,
+	User getUserByUserNumber(String userNumber) throws IllegalArgumentException,
 			UserNotFoundException;
 
 	/**
