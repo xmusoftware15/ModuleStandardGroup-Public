@@ -19,7 +19,6 @@ public interface CourseService {
      * @param userId 用户Id
      * @return null 课程列表
      * @throws IllegalArgumentException userId格式错误时抛出
-     * @throws CourseNotFoundException  未找到课程
      * @author ZhouZhongjun
      */
     List<Course> listCourseByUserId(BigInteger userId) throws IllegalArgumentException, CourseNotFoundException;
