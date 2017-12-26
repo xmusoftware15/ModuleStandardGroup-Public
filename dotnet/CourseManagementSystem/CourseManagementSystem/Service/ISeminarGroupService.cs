@@ -98,6 +98,14 @@ namespace Xmu.Crms.Shared.Service
         /// <returns>long 返回该小组成员表的id</returns>
         long InsertSeminarGroupMemberByGroupId(long groupId, SeminarGroupMember seminarGroupMember);
 
+        ///<summary>
+        ///删除小组成员.
+        ///在指定小组成员表下删除一个小组成员信息
+        ///</summary>
+        ///<param name="seminarGroupId">小组的id</param>
+        ///<param name="userId">成员id</param>
+        void DeleteSeminarGroupMemberById(long seminarGroupId,long userId);
+
 
         /// <summary>
         /// 删除讨论课小组.

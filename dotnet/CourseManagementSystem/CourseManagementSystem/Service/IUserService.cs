@@ -57,7 +57,7 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.ISchoolService.GetSchoolBySchoolId(System.Int64)"/>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">id格式错误</exception>
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.UserNotFoundException">未找到对应用户</exception>
-        UserInfo GetUserByUserId(string userNumber);
+        UserInfo GetUserByUserNumber(string userNumber);
 
         /// <summary>
         /// 根据用户名获取用户ID.
@@ -137,14 +137,6 @@ namespace Xmu.Crms.Shared.Service
         /// <exception cref="T:Xmu.Crms.Shared.Exceptions.SeminarNotFoundException">未找到对应讨论课</exception>
         IList<UserInfo> ListAbsenceStudent(long seminarId, long classId);
 
-        /// <summary>
-        /// 根据教师名称列出课程名称.
-        /// @author yexiaona
-        /// </summary>
-        /// <param name="teacherName">教师名称</param>
-        /// <returns>list 课程列表</returns>
-        /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListUserByUserName(System.String)"/>
-        /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
-        IList<Course> ListCourseByTeacherName(string teacherName);
+        
     }
 }
