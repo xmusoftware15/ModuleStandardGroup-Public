@@ -26,7 +26,6 @@ namespace Xmu.Crms.Shared.Service
         /// <param name="userId">用户Id</param>
         /// <returns>null 课程列表</returns>
         /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
-        /// <exception cref="T:Xmu.Crms.Shared.Exceptions.CourseNotFoundException">未找到课程</exception>
         IList<Course> ListCourseByUserId(long userId);
 
 
