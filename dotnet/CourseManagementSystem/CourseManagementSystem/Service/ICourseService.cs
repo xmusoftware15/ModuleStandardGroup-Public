@@ -114,5 +114,15 @@ namespace Xmu.Crms.Shared.Service
         /// <seealso cref="M:Xmu.Crms.Shared.Service.IClassService.ListClassByCourseId(System.Int64)"/>
         /// <exception cref="T:System.ArgumentException">userId格式错误时抛出</exception>
         IList<ClassInfo> ListClassByName(string courseName,string teacherName);
+
+        /// <summary>
+        /// 根据教师名称列出课程名称.
+        /// @author yexiaona
+        /// </summary>
+        /// <param name="teacherName">教师名称</param>
+        /// <returns>list 课程列表</returns>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.IUserService.ListUserByUserName(System.String)"/>
+        /// <seealso cref="M:Xmu.Crms.Shared.Service.ICourseService.ListCourseByUserId(System.Int64)"/>
+        IList<Course> ListCourseByTeacherName(string teacherName);
     }
 }
