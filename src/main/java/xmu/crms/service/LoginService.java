@@ -1,6 +1,8 @@
 package xmu.crms.service;
 
+import java.io.IOException;
 import java.math.BigInteger;
+import java.util.Map;
 
 import xmu.crms.entity.*;
 import xmu.crms.exception.*;
@@ -22,7 +24,7 @@ public interface LoginService {
 	 * @return user 该用户信息
 	 * @exception UserNotFoundException 登录失败时抛出
 	 */
-	 User signInWeChat(BigInteger userId,String code,String state,String successUrl) throws UserNotFoundException;
+	Map<String, Object> signInWeChat(BigInteger userId, String code, String state, String successUrl)  throws IOException;
 
 	/**
 	 * 微信登录后用户绑定.
