@@ -11,6 +11,9 @@ This repo contains Public Releases and Offical Resources from XMU'17 OOAD Module
 * 12/11 Publish All layers Standard
 * 12/12 Redo and discuss
 * 12/12 Publish Module Standard 1.0
+* 12/17 Publish Module Standard 2.0
+* 12/21 Publish Module Standard 2.10
+* 12/23 Publish Module Standard 2.20
 * 12/29 Add Spring Security Standard 1.0
 
 ## Resources
