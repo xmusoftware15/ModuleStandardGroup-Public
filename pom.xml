@@ -67,7 +67,7 @@
    <repositories>  
         <repository>  
             <id>spring-milestone</id>  
-            <url>http://repo.spring.io/libs-release</url>  
+            <url>https://repo.spring.io/libs-release</url>  
         </repository>  
     </repositories> 
 </project>
